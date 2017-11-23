@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--현재 정의가 되어 있는 css를 가지고 옴-->
+    <link rel="stylesheet" type="text/css" href="modal.css">
+    <!--JQuery를 사용하기 위해 가지고온 링크-->
+    <script src="/board/node_modules/jquery/dist/jquery.js"></script>
+    <!-- 합쳐지고 최소화된 최신 CSS -->
+    <link rel="stylesheet" href="/board/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!-- 부가적인 테마 -->
+    <link rel="stylesheet" href="/board/node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
+    <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+    <script src="/board/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</head>
+<body>
+<nav class="nav navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#"><font color="orange">空白のパージ</font></a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a href="#">リスト</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span>会員加入</a></li>
+            <li><a onclick="login(event.target.id)" id="login"><span class="glyphicon glyphicon-log-in"></span>ログイン</a></li>
+        </ul>
+    </div>
+</nav>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>ナンバー</td>
+            <td>タイトル</td>
+            <td>ライター</td>
+            <td>タイム</td>
+            <td>クリック　数</td>
+        </tr>
+    </thead>
+</table>
+
+<div class="modalStyle">
+
+</div>
+
+<script type="text/javascript" src="loginModal.js">
+    function login(clickTargetId) {
+
+    }
+</script>
+</body>
+</html>
