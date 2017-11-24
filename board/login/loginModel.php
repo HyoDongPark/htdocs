@@ -7,6 +7,8 @@
  */
     include "loginModel.php";
 
+    @session_start();
+
     class userInfo extends UserLogin{
 
         private $TABLE_NAME = "user";
@@ -43,6 +45,16 @@
             $this->connect->query($sql);
         }
         function delete() {
+            $userId = $_SESSION['id'];
+            $userPw = $_SESSION['passWord'];
 
+            if($userId == null || $userPw == null) {
+                echo "<script>alert('현재 로그인이 되어 있지 않습니다');</script>";
+            }
+            else {
+                $sql = "DELETE FROM $this->TABLE_NAME WHERE user_id = $userId";
+
+                $this->connect->query($sql);
+            }
         }
     }

@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef03bdf3-eca7-480f-a0b0-e4233b48b0ad" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/board/login/loginModel.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/board/login/loginUser.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/board/modal.css" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/board/navipage.html" afterPath="$PROJECT_DIR$/board/navipage.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/board/login/loginModel.php" afterPath="$PROJECT_DIR$/board/login/loginModel.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -33,17 +30,21 @@
       <file leaf-file-name="loginModel.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/board/login/loginModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="658">
-              <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+            <state relative-caret-position="688">
+              <caret line="56" column="44" lean-forward="false" selection-start-line="56" selection-start-column="44" selection-end-line="56" selection-end-column="44" />
               <folding>
-                <marker date="1511529398067" expanded="true" signature="338:350" ph="INSERT INTO $... " />
-                <marker date="1511529398067" expanded="true" signature="914:938" ph="SELECT ${$fi... " />
-                <marker date="1511529398067" expanded="true" signature="914:939" ph="SELECT ${$fi... ${$this-&gt;TABLE_NAME}" />
-                <marker date="1511529398067" expanded="true" signature="914:959" ph="SELECT ${$fi... ${$this-&gt;TABLE_NAME}" />
-                <marker date="1511529398067" expanded="true" signature="1183:1211" ph="UPDATE ${$th... " />
-                <marker date="1511529398067" expanded="true" signature="1183:1223" ph="UPDATE ${$th... " />
-                <marker date="1511529398067" expanded="true" signature="1183:1224" ph="UPDATE ${$th... " />
-                <marker date="1511529398067" expanded="true" signature="1183:1259" ph="UPDATE ${$th... " />
+                <marker date="1511531761898" expanded="true" signature="361:373" ph="INSERT INTO $... " />
+                <marker date="1511531761898" expanded="true" signature="937:961" ph="SELECT ${$fi... " />
+                <marker date="1511531761898" expanded="true" signature="937:962" ph="SELECT ${$fi... ${$this-&gt;TABLE_NAME}" />
+                <marker date="1511531761898" expanded="true" signature="937:982" ph="SELECT ${$fi... ${$this-&gt;TABLE_NAME}" />
+                <marker date="1511531761898" expanded="true" signature="1206:1234" ph="UPDATE ${$th... " />
+                <marker date="1511531761898" expanded="true" signature="1206:1246" ph="UPDATE ${$th... " />
+                <marker date="1511531761898" expanded="true" signature="1206:1247" ph="UPDATE ${$th... " />
+                <marker date="1511531761898" expanded="true" signature="1206:1282" ph="UPDATE ${$th... " />
+                <marker date="1511531761898" expanded="true" signature="1630:1642" ph="DELETE FROM " />
+                <marker date="1511531761898" expanded="true" signature="1630:1643" ph="DELETE FROM " />
+                <marker date="1511531761898" expanded="true" signature="1630:1675" ph="DELETE FROM " />
+                <marker date="1511531761898" expanded="true" signature="1630:1676" ph="DELETE FROM " />
               </folding>
             </state>
           </provider>
@@ -128,10 +129,10 @@
   <component name="PhpDebugGeneral" listening_started="true" />
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP 7.1" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2141" />
-    <option name="y" value="-18" />
-    <option name="width" value="1550" />
-    <option name="height" value="838" />
+    <option name="x" value="-77" />
+    <option name="y" value="-33" />
+    <option name="width" value="1938" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -164,12 +165,6 @@
               <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
               <item name="htdocs" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="board" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="htdocs" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="board" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="login" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
@@ -224,7 +219,7 @@
       <workItem from="1511269491923" duration="286000" />
       <workItem from="1511344637397" duration="269000" />
       <workItem from="1511400390003" duration="14879000" />
-      <workItem from="1511518731297" duration="7518000" />
+      <workItem from="1511518731297" duration="9637000" />
     </task>
     <task id="LOCAL-00001" summary="ddd">
       <created>1511259216905</created>
@@ -268,14 +263,21 @@
       <option name="project" value="LOCAL" />
       <updated>1511440125795</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="board (2)">
+      <created>1511529658968</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1511529658968</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23294000" />
+    <option name="totallyTimeSpent" value="25413000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1911" y="-9" width="1938" height="1098" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
     <layout>
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14583333" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -307,7 +309,8 @@
     <MESSAGE value="report" />
     <MESSAGE value="namespace or mysqli" />
     <MESSAGE value="board" />
-    <option name="LAST_COMMIT_MESSAGE" value="board" />
+    <MESSAGE value="board (2)" />
+    <option name="LAST_COMMIT_MESSAGE" value="board (2)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -412,6 +415,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3860">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -484,17 +488,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/board/login/loginModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="658">
-          <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+        <state relative-caret-position="688">
+          <caret line="56" column="44" lean-forward="false" selection-start-line="56" selection-start-column="44" selection-end-line="56" selection-end-column="44" />
           <folding>
-            <marker date="1511529398067" expanded="true" signature="338:350" ph="INSERT INTO $... " />
-            <marker date="1511529398067" expanded="true" signature="914:938" ph="SELECT ${$fi... " />
-            <marker date="1511529398067" expanded="true" signature="914:939" ph="SELECT ${$fi... ${$this-&gt;TABLE_NAME}" />
-            <marker date="1511529398067" expanded="true" signature="914:959" ph="SELECT ${$fi... ${$this-&gt;TABLE_NAME}" />
-            <marker date="1511529398067" expanded="true" signature="1183:1211" ph="UPDATE ${$th... " />
-            <marker date="1511529398067" expanded="true" signature="1183:1223" ph="UPDATE ${$th... " />
-            <marker date="1511529398067" expanded="true" signature="1183:1224" ph="UPDATE ${$th... " />
-            <marker date="1511529398067" expanded="true" signature="1183:1259" ph="UPDATE ${$th... " />
+            <marker date="1511531761898" expanded="true" signature="361:373" ph="INSERT INTO $... " />
+            <marker date="1511531761898" expanded="true" signature="937:961" ph="SELECT ${$fi... " />
+            <marker date="1511531761898" expanded="true" signature="937:962" ph="SELECT ${$fi... ${$this-&gt;TABLE_NAME}" />
+            <marker date="1511531761898" expanded="true" signature="937:982" ph="SELECT ${$fi... ${$this-&gt;TABLE_NAME}" />
+            <marker date="1511531761898" expanded="true" signature="1206:1234" ph="UPDATE ${$th... " />
+            <marker date="1511531761898" expanded="true" signature="1206:1246" ph="UPDATE ${$th... " />
+            <marker date="1511531761898" expanded="true" signature="1206:1247" ph="UPDATE ${$th... " />
+            <marker date="1511531761898" expanded="true" signature="1206:1282" ph="UPDATE ${$th... " />
+            <marker date="1511531761898" expanded="true" signature="1630:1642" ph="DELETE FROM " />
+            <marker date="1511531761898" expanded="true" signature="1630:1643" ph="DELETE FROM " />
+            <marker date="1511531761898" expanded="true" signature="1630:1675" ph="DELETE FROM " />
+            <marker date="1511531761898" expanded="true" signature="1630:1676" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
