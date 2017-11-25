@@ -12,7 +12,7 @@
     <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
     <script src="../board/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </head>
-<body>
+<body onload="Checked()">
 <nav class="nav navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -23,7 +23,8 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <li><a href="#"><span class="glyphicon glyphicon-user"></span>会員加入</a></li>
-            <li><a id="login" data-target="#modalLogin" data-toggle="modal"><span class="glyphicon glyphicon-log-in"></span>ログイン</a></li>
+            <li id="loginValue"><a id="login" data-target="#modalLogin" data-toggle="modal"><span class="glyphicon glyphicon-log-in"></span>ログイン</a></li>
+            <li id="logoutValue" style="display:none;"><a id="logout" onclick="logout()"><span class="glyphicon glyphicon-log-out"></span>ログアウト</a></li>
         </ul>
     </div>
 </nav>
@@ -50,6 +51,8 @@
             </tr>
         </thead>
     </table>
+    <br>
+    <a id="write" hidden data-target="#modalLogin" data-toggle="modal" class="btn-success">글쓰기</a>
 </div>
 
 <div class="modal fade" id="modalLogin">
@@ -77,12 +80,73 @@
     </div>
 </div>
 
-<script type="text/javascript" src="loginModal.js">
-    function login() {
+<script type="text/javascript">
+
+    var value = 1;
+
+    function Checked() {
         $.ajax({
-            type    : "POST",
-            url     : ""
-        })
+            type: "POST",
+            url: "login/loginCheck.php",
+            data: {sessionCheck: value}
+        }).done(function (data) {
+            if(data == "OK") {
+                $("#loginValue").hide();
+                $("#logoutValue").show();
+                $("#write").show();
+            }
+            if(data == "NO") {
+                $("#loginValue").show();
+                $("#logoutValue").hide();
+                $("#write").hide();
+            }
+        });
+    }
+
+
+    function login() {
+        var getId = $("#idCheck").val();
+        var getPw = $("#pwCheck").val();
+
+        if (getId == null || getPw == null) {
+            alert("아이디와 비밀번호를 덜 입력하셨습니다.");
+        }
+        else {
+            $.ajax({
+                type: "POST",
+                url: "login/loginCheck.php",
+                data: {idCheck: getId, pwCheck: getPw}
+            }).done(function (data) {
+                if(data == "") {
+                    $("#modalLogin").modal('hide');
+                    $("#loginValue").hide();
+                    $("#logoutValue").show();
+                    $("#write").show();
+                }
+                else
+                    alert(data);
+            });
+        }
+    }
+    function logout() {
+        value = 1;
+
+        $.ajax({
+            type: "POST",
+            url: "login/loginCheck.php",
+            data: {sessionClear: value}
+        }).done(function (data) {
+            if(data == "OK") {
+                $("#loginValue").show();
+                $("#logoutValue").hide();
+                $("#write").hide();
+            }
+            if(data == "NO") {
+                $("#loginValue").hide();
+                $("#logoutValue").show();
+                $("#write").show();
+            }
+        });
     }
 </script>
 </body>
