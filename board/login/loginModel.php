@@ -5,21 +5,21 @@
  * Date: 2017-11-24
  * Time: 오후 8:25
  */
-    include "loginUser.php";
+    include "../mysqliConnect/connectInfo.php";
 
     @session_start();
 
-    class userInfo extends UserLogin{
+    class userInfo extends connectInfo{
 
         private $TABLE_NAME = "user";
         //<-------------------------유저 정보 등록--------------------------------------------------------->
         function insert($userId, $userName, $userPw) {
-            $currentTime = date("YY-mm-dd H:m:s");
+            $currentTime = date("Y-m-d H:m:s");
 
             $sql         = "INSERT INTO $this->TABLE_NAME ";
             $sql        .= "(user_id, user_name, user_pw, reg_date) ";
             $sql        .= "VALUES ";
-            $sql        .= "('$userId', '$userName', '$userPw', '$currentTime'";
+            $sql        .= "('$userId', '$userName', '$userPw', '$currentTime')";
 
             $this->connect->query($sql);
         }
@@ -32,7 +32,7 @@
                 $backString = " ";
             }
 
-            $sql         = "SELECT $firstString from ".$this->TABLE_NAME."$backString";
+            $sql         = "SELECT $firstString from ".$this->TABLE_NAME." $backString";
 
             $result      = $this->connect->query($sql);
 

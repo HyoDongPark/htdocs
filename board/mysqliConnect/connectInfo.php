@@ -5,7 +5,7 @@
  * Date: 2017-11-24
  * Time: 오후 8:25
  */
-class UserLogin {
+class connectInfo {
     protected $DATABASE_HOST                = "localhost";
     protected $DATABASE_USER_ID             = "root";
     protected $DATABASE_USER_PASSWORD       = "qweasd45";
