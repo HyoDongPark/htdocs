@@ -14,6 +14,7 @@
     $userId         = @$_SESSION['id'];
 
     $allSet         = @$_POST['allSet'];
+    $firstUp        = @$_POST['firstUp'];
     $titleText      = @$_POST['titleText'];
     $contentsText   = @$_POST['contentsText'];
     $page           = @$_POST['page'];
@@ -28,6 +29,7 @@
         unset($_SESSION['searchValue']);
         unset($_SESSION['searchText']);
         unset($_SESSION['page']);
+        unset($_SESSION['boardId']);
     }
 
 
@@ -40,6 +42,7 @@
         unset($_SESSION['searchValue']);
         unset($_SESSION['searchText']);
         unset($_SESSION['page']);
+        unset($_SESSION['boardId']);
 
         $page = 0;
 
@@ -167,15 +170,15 @@
         }
 
         if($userIdValue != @$_SESSION['id']) {
-            $checkedValue = "NO";
+            $checkedValue           = "NO";
         }
         else {
-            $checkedValue = "OK";
+            $checkedValue           = "OK";
         }
 
         $hits++;
 
-        $upString = "hits = '$hits'";
+        $upString                   = "hits = '$hits'";
 
         $boardObj->update($boardId, $upString);
 
@@ -191,6 +194,20 @@
         $boardObj->update($boardVal, $upString);
 
         echo $boardVal;
+    }
+    else if($firstUp != null) {
+        $page           = 0;
+        $firstString    = "";
+        $backString     = "";
+
+        $result         = $boardObj->select($firstString, $backString, $page);
+
+        while ($print   = mysqli_fetch_array($result)) {
+            $title      = $print['subject'];
+            $contents   = $print['contents'];
+        }
+
+        echo $title."|".$contents;
     }
     else if($delete != null) {
         $boardObj->delete($_SESSION['boardId']);

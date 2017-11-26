@@ -161,7 +161,7 @@
                     <br>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn-success" id="update" data-target="#modalUpdate" data-toggle="modal">アップデート</button>
+                    <button class="btn-success" id="update" data-target="#modalUpdate" data-toggle="modal" onclick="firstUpdate()">アップデート</button>
                     <button class="btn-default"  id="delete" onclick="deleteKey()">デリート</button>
                     <button class="btn-danger" name="close" data-dismiss="modal">アウト</button>
                 </div>
@@ -347,6 +347,18 @@
             }).done(function (data) {
                 $("#tbodyValue").append(data);
             });
+        });
+    }
+
+    function firstUpdate() {
+        $.ajax({
+            type: "POST",
+            url: "boardInfo/boardAllFile.php",
+            data : {firstUp : 1}
+        }).done(function (data) {
+            var textValue = data.split('|');
+            $("#titleUpdate").val(textValue[0]);
+            $("#contentsUpdate").val(textValue[1]);
         });
     }
 
