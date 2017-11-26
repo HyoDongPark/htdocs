@@ -19,7 +19,7 @@
             <a class="navbar-brand" href="#"><font color="orange">空白のパージ</font></a>
         </div>
         <ul class="nav navbar-nav">
-            <li><a href="#">リスト</a></li>
+            <li><a onclick="allSet()">リスト</a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <li><a id="sign" data-target="#modalMemberShip" data-toggle="modal"><span class="glyphicon glyphicon-user"></span>会員加入</a></li>
@@ -30,13 +30,13 @@
 </nav>
 <br><br>
 <div class="container">
-    <select class="form-control" name="selectValue">
+    <select class="form-control" id="selectValue">
         <option value="제목">タイトル</option>
         <option value="내용">コンテンツ</option>
         <option value="작성자">ライター</option>
     </select>
     <input type="text" id="search" name="search" class="form-control" style="display: inline">
-    <button onclick="" class="form-control btn-success">サーチ</button>
+    <button onclick="searchKey()" class="form-control btn-success">サーチ</button>
 </div>
 <br>
 <div class="container">
@@ -217,10 +217,10 @@
                 $("#write").hide();
             }
         });
+        removeSet();
         $.ajax({
             type: "POST",
-            url: "boardInfo/boardAllFile.php",
-            data: {page : 0}
+            url: "boardInfo/boardAllFile.php"
         }).done(function (data) {
             $("#tbodyValue").append(data);
         });
@@ -291,8 +291,8 @@
                         type: "POST",
                         url: "boardInfo/boardAllFile.php",
                         data: {page : 0}
-                    }).done(function (data) {
-
+                    }).done(function () {
+                        $("#modalMemberShip").modal('hide');
                     });
                 }
             });
@@ -403,18 +403,58 @@
                         data: {page : 0}
                     }).done(function (data) {
                         $("#tbodyValue").append(data);
+                        $("#titleUpdate").val('');
+                        $("#contentsUpdate").val('');
+
                     });
                 });
             });
         }
     }
-
     function deleteKey() {
-
+        $.ajax({
+            type: "POST",
+            url: "boardInfo/boardAllFile.php",
+            data: {deleteId : 1}
+        });
+        removeSet();
+        $.ajax({
+            type: "POST",
+            url: "boardInfo/boardAllFile.php",
+            data: {page : 0}
+        }).done(function (data) {
+            $("#modalReading").modal('hide');
+            $("#tbodyValue").append(data);
+        });
     }
-
     function removeSet() {
         $("#tbodyValue").empty();
+    }
+
+    function searchKey() {
+        var selectValue      = $("#selectValue").val();
+        var searchValue      = $("#search").val();
+        removeSet();
+        $.ajax({
+            type: "POST",
+            url: "boardInfo/boardAllFile.php",
+            data: {selectValue : selectValue , searchText : searchValue , page : 0}
+        }).done(function (data) {
+            $("#tbodyValue").append(data);
+        });
+    }
+
+    function allSet() {
+        removeSet();
+        $.ajax({
+            type: "POST",
+            url: "boardInfo/boardAllFile.php",
+            data : {
+                allSet : 1
+            }
+        }).done(function (data) {
+            $("#tbodyValue").append(data);
+        });
     }
 </script>
 </body>

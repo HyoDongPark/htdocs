@@ -13,6 +13,7 @@
 
     $userId         = @$_SESSION['id'];
 
+    $allSet         = @$_POST['allSet'];
     $titleText      = @$_POST['titleText'];
     $contentsText   = @$_POST['contentsText'];
     $page           = @$_POST['page'];
@@ -23,12 +24,41 @@
     $updateContents = @$_POST['updateContents'];
     $delete         = @$_POST['deleteId'];
 
+    if($selectValue != null && $searchText != null) {
+        unset($_SESSION['searchValue']);
+        unset($_SESSION['searchText']);
+        unset($_SESSION['page']);
+    }
+
+
     if($titleText != null && $contentsText != null) {
         $boardObj->insert($userId, $titleText, $contentsText);
 
         echo "OK";
     }
-    else if($page != null && @$_SESSION['searchValue'] == null) {
+    else if ($allSet != null){
+        unset($_SESSION['searchValue']);
+        unset($_SESSION['searchText']);
+        unset($_SESSION['page']);
+
+        $page = 0;
+
+        $firstString    = "";
+        $backString     = "";
+
+        $result         = $boardObj->select($firstString, $backString, $page);
+
+        while($print = mysqli_fetch_array($result)) {
+            echo "<tr>
+                <td>$print[board_id]</td>
+                <td><a id='$print[board_id]'data-target='#modalReading' data-toggle='modal' onclick='reading(event.target.id)'>$print[subject]</a></td>
+                <td>$print[user_id]</td>
+                <td>$print[reg_date]</td>
+                <td>$print[hits]</td>
+              </tr>";
+        }
+    }
+    else if($page != null && @$_SESSION['searchValue'] == null && $selectValue == null) {
         $firstString    = "";
         $backString     = "";
 
@@ -44,7 +74,8 @@
                   </tr>";
         }
     }
-    else if($selectValue != null && $searchText != null && $page != null ) {
+    else if($selectValue != null && $searchText != null && $page != null && @$_SESSION['searchValue'] == null) {
+
         switch ($selectValue) {
             case "제목":
                 $searchValue        = "subject";
@@ -59,9 +90,10 @@
 
         @$_SESSION['searchValue']   = $searchValue;
         @$_SESSION['searchText']    = $searchText;
+        @$_SESSION['page']          = $page;
 
         $firstString                = "";
-        $backString                 = "WHERE $searchValue LIKE '%$selectText%'";
+        $backString                 = "WHERE $searchValue LIKE '%$searchText%'";
 
         $result                     = $boardObj->select($firstString, $backString, $page);
 
@@ -69,13 +101,13 @@
             echo "<tr>
                     <td>$print[board_id]</td>
                     <td><a id='$print[user_id]'data-target='#modalReading' data-toggle='modal' onclick='reading(event.target.id)'>$print[subject]</a></td>
-                    <td>$print[contents]</td>
+                    <td>$print[user_id]</td>
                     <td>$print[reg_date]</td>
                     <td>$print[hits]</td>
                   </tr>";
         }
     }
-    else if(@$_SESSION['searchValue'] != null && @$_SESSION['searchText'] != null && $page != null) {
+    else if(@$_SESSION['searchValue'] != null && @$_SESSION['searchText'] != null && $page != null ) {
 
         $firstString                = "";
         $backString                 = "WHERE ".@$_SESSION['searchValue']." LIKE '%".@$_SESSION['searchText']."%'";
@@ -158,7 +190,30 @@
 
         $boardObj->update($boardVal, $upString);
 
+        echo $boardVal;
+    }
+    else if($delete != null) {
+        $boardObj->delete($_SESSION['boardId']);
+
         unset($_SESSION['boardId']);
 
-        echo $boardVal;
+        echo "OK";
+    }
+    else {
+        $page = 0;
+
+        $firstString    = "";
+        $backString     = "";
+
+        $result         = $boardObj->select($firstString, $backString, $page);
+
+        while($print = mysqli_fetch_array($result)) {
+            echo "<tr>
+                    <td>$print[board_id]</td>
+                    <td><a id='$print[board_id]'data-target='#modalReading' data-toggle='modal' onclick='reading(event.target.id)'>$print[subject]</a></td>
+                    <td>$print[user_id]</td>
+                    <td>$print[reg_date]</td>
+                    <td>$print[hits]</td>
+                  </tr>";
+        }
     }
