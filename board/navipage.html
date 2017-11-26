@@ -30,10 +30,10 @@
 </nav>
 <br><br>
 <div class="container">
-    <select class="form-control">
-        <option value="제목" name="title">タイトル</option>
-        <option value="내용" name="contents">コンテンツ</option>
-        <option value="작성자" name="writer">ライター</option>
+    <select class="form-control" name="selectValue">
+        <option value="제목">タイトル</option>
+        <option value="내용">コンテンツ</option>
+        <option value="작성자">ライター</option>
     </select>
     <input type="text" id="search" name="search" class="form-control" style="display: inline">
     <button onclick="" class="form-control btn-success">サーチ</button>
@@ -50,6 +50,9 @@
                 <td>クリック　数</td>
             </tr>
         </thead>
+        <tbody id="tbodyValue">
+        
+        </tbody>
     </table>
     <br>
     <button id="write" hidden data-target="#modalWrite" data-toggle="modal" class="btn-success">ライター</button>
@@ -109,7 +112,7 @@
     </div>
 </div>
 
-<!--<-------------------------------모달 가입창--------------------------------------------------->
+<!--<-------------------------------모달 글작성--------------------------------------------------->
 <div class="modal fade" id="modalWrite">
     <div class="container">
         <div class="modal-dialog">
@@ -125,12 +128,69 @@
                     <h5 style="color: red; display : none" id="titleDangerWriter">* 제목이 없습니다.</h5>
                     <br>
                     <h4 class="modal-title">コンテンツ</h4>
-                    <textarea style="height: 300px" class="form-control" type="password" id="contentsText" name="contentsText"></textarea>
+                    <textarea style="height: 300px" class="form-control" id="contentsText" name="contentsText"></textarea>
                     <h5 style="color: red; display : none" id="contentsDangerWriter">* 내용이 없습니다.</h5>
                     <br>
                 </div>
                 <div class="modal-footer">
                     <button class="btn-success" id="writerOk" onclick="insertWrite()">ライター</button>
+                    <button class="btn-danger" name="close" data-dismiss="modal">アウト</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<-------------------------------모달 글보기--------------------------------------------------->
+<div class="modal fade" id="modalReading">
+    <div class="container">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal">x</button>
+                    <!--ID 창-->
+                    <h2 class="modal-title">文見る</h2>
+                </div>
+                <div class="modal-body">
+                    <h4 class="modal-title">タイトル</h4>
+                    <hr>
+                    <h4 id="titleReadingText"></h4>
+                    <br>
+                    <h4 class="modal-title">コンテンツ</h4>
+                    <hr>
+                    <h4 id="contentsReadingText"></h4>
+                    <br>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-success" id="update" data-target="#modalUpdate" data-toggle="modal">アップデート</button>
+                    <button class="btn-default"  id="delete" onclick="deleteKey()">デリート</button>
+                    <button class="btn-danger" name="close" data-dismiss="modal">アウト</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--<-------------------------------모달 글수정--------------------------------------------------->
+<div class="modal fade" id="modalUpdate">
+    <div class="container">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" data-dismiss="modal">x</button>
+                    <!--ID 창-->
+                    <h2 class="modal-title">作文</h2>
+                </div>
+                <div class="modal-body">
+                    <h4 class="modal-title">タイトル</h4>
+                    <input class="form-control" type="text" id="titleUpdate" name="titleUpdate">
+                    <h5 style="color: red; display : none" id="titleDangerUpdate">* 제목이 없습니다.</h5>
+                    <br>
+                    <h4 class="modal-title">コンテンツ</h4>
+                    <textarea style="height: 300px" class="form-control" id="contentsUpdate" name="contentsUpdate"></textarea>
+                    <h5 style="color: red; display : none" id="contentsDangerUpdate">* 내용이 없습니다.</h5>
+                    <br>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn-success" id="updateOk" onclick="updateKey()">アップデート</button>
                     <button class="btn-danger" name="close" data-dismiss="modal">アウト</button>
                 </div>
             </div>
@@ -156,6 +216,13 @@
                 $("#logoutValue").hide();
                 $("#write").hide();
             }
+        });
+        $.ajax({
+            type: "POST",
+            url: "boardInfo/boardAllFile.php",
+            data: {page : 0}
+        }).done(function (data) {
+            $("#tbodyValue").append(data);
         });
     }
 
@@ -220,23 +287,134 @@
             }).done(function (data) {
                 if(data == "OK") {
                     $("#dangerWriter").hide();
-                    $("#modalMemberShip").modal('hide');
-                    $("#idMemberCheck").val('');
-                    $("#pwMemberCheck").val('');
-                    $("#NameMemberCheck").val('');
-                }
-                else if(data == "중복") {
-                    $("#dangerWriter").show();
-                    $("#idMemberCheck").val('');
-                    $("#pwMemberCheck").val('');
-                    $("#NameMemberCheck").val('');
+                    $.ajax({
+                        type: "POST",
+                        url: "boardInfo/boardAllFile.php",
+                        data: {page : 0}
+                    }).done(function (data) {
+
+                    });
                 }
             });
         }
     }
 
     function insertWrite() {
+        var title       = $("#titleText").val();
+        var contents    = $("#contentsText").val();
 
+        $.ajax({
+            type: "POST",
+            url: "boardInfo/boardAllFile.php",
+            data: {titleText: title, contentsText :contents}
+        }).done(function (data) {
+            if(data == "OK") {
+                $("#modalWrite").modal('hide');
+                removeSet();
+                $.ajax({
+                    type: "POST",
+                    url: "boardInfo/boardAllFile.php",
+                    data: {page : 0}
+                }).done(function (data) {
+                    $("#tbodyValue").append(data);
+                });
+            }
+        });
+    }
+    function reading(boardId) {
+        $.ajax({
+            type: "POST",
+            url: "boardInfo/boardAllFile.php",
+            data: {boardId: boardId}
+        }).done(function (data) {
+            var textValue = data.split('|');
+            $("#titleReadingText").html(textValue[0]);
+            $("#contentsReadingText").html(textValue[1]);
+            if(textValue[2] == "NO") {
+                $("#update").hide();
+                $("#delete").hide();
+            }
+            else {
+                $("#update").show();
+                $("#delete").show();
+
+            }
+            removeSet();
+            $.ajax({
+                type: "POST",
+                url: "boardInfo/boardAllFile.php",
+                data: {page : 0}
+            }).done(function (data) {
+                $("#tbodyValue").append(data);
+            });
+        });
+    }
+
+    function updateKey() {
+        $("#modalUpdate").modal('hide');
+        var upTitle         = $("#titleUpdate").val();
+        var upContents      = $("#contentsUpdate").val();
+
+        var titleCheck      = false;
+        var contentsCheck   = false;
+
+        if(upTitle == "" || upTitle == null) {
+            $("#titleDangerUpdate").show();
+            titleCheck      = false;
+        }
+        else {
+            $("#contentsDangerUpdate").hide();
+            titleCheck      = true;
+        }
+        if(upContents == "" || upContents == null) {
+            $("#titleDangerUpdate").show();
+            contentsCheck   = false;
+        }
+        else {
+            $("#contentsDangerUpdate").hide();
+            contentsCheck   = true;
+        }
+        if(titleCheck == true && contentsCheck == true) {
+            $.ajax({
+                type: "POST",
+                url: "boardInfo/boardAllFile.php",
+                data: {updateTitle : upTitle, updateContents : upContents}
+            }).done(function (data) {
+                $.ajax({
+                    type: "POST",
+                    url: "boardInfo/boardAllFile.php",
+                    data: {boardId : data}
+                }).done(function (data) {
+                    var textValue = data.split('|');
+                    $("#titleReadingText").html(textValue[0]);
+                    $("#contentsReadingText").html(textValue[1]);
+                    if(textValue[2] == "NO") {
+                        $("#update").hide();
+                        $("#delete").hide();
+                    }
+                    else {
+                        $("#update").show();
+                        $("#delete").show();
+                    }
+                    removeSet();
+                    $.ajax({
+                        type: "POST",
+                        url: "boardInfo/boardAllFile.php",
+                        data: {page : 0}
+                    }).done(function (data) {
+                        $("#tbodyValue").append(data);
+                    });
+                });
+            });
+        }
+    }
+
+    function deleteKey() {
+
+    }
+
+    function removeSet() {
+        $("#tbodyValue").empty();
     }
 </script>
 </body>

@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef03bdf3-eca7-480f-a0b0-e4233b48b0ad" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/board/boardInfo/boardModel.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/board/signUp/signUp.php" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/board/login/loginUser.php" afterPath="$PROJECT_DIR$/board/mysqliConnect/connectInfo.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/board/boardInfo/boardAllFile.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/board/login/loginModel.php" afterPath="$PROJECT_DIR$/board/login/loginModel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/board/boardInfo/boardModel.php" afterPath="$PROJECT_DIR$/board/boardInfo/boardModel.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/board/navipage.html" afterPath="$PROJECT_DIR$/board/navipage.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,19 +16,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="navipage.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/board/navipage.html">
+      <file leaf-file-name="boardAllFile.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/board/boardInfo/boardAllFile.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="54" column="11" lean-forward="false" selection-start-line="54" selection-start-column="11" selection-end-line="54" selection-end-column="11" />
+            <state relative-caret-position="232">
+              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
               <folding>
-                <element signature="n#style#0;n#li#2;n#ul#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#input#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#table#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h5#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h5#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#textarea#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#h5#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1511700334722" expanded="true" signature="1055:1081" ph="..." />
+                <marker date="1511700334722" expanded="true" signature="1055:1132" ph="..." />
+                <marker date="1511700334722" expanded="true" signature="1055:1414" ph="..." />
+                <marker date="1511700334722" expanded="true" signature="2236:2313" ph="..." />
+                <marker date="1511700334722" expanded="true" signature="2236:2595" ph="..." />
+                <marker date="1511700334722" expanded="true" signature="3089:3166" ph="..." />
+                <marker date="1511700334722" expanded="true" signature="3089:3448" ph="..." />
+                <marker date="1511700334722" expanded="true" signature="3922:3999" ph="..." />
+                <marker date="1511700334722" expanded="true" signature="3922:4281" ph="..." />
               </folding>
             </state>
           </provider>
@@ -39,26 +39,41 @@
       <file leaf-file-name="boardModel.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/board/boardInfo/boardModel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1410">
-              <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+            <state relative-caret-position="172">
+              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding>
-                <marker date="1511592309754" expanded="true" signature="457:469" ph="INSERT INTO ${$this-&gt;TABLE_NAME}... " />
-                <marker date="1511592309754" expanded="true" signature="1137:1184" ph="SELECT ${$fi... ${$this-&gt;TABLE_NAME}" />
-                <marker date="1511592309754" expanded="true" signature="1535:1634" ph="UPDATE ${$th... " />
-                <marker date="1511592309754" expanded="true" signature="1913:1960" ph="DELETE FROM " />
-                <marker date="1511592309754" expanded="true" signature="1913:1961" ph="DELETE FROM " />
-                <marker date="1511592309754" expanded="true" signature="1913:1970" ph="DELETE FROM " />
+                <marker date="1511697890174" expanded="true" signature="456:468" ph="INSERT INTO ${$this-&gt;TABLE_NAME}... " />
+                <marker date="1511697890174" expanded="true" signature="1143:1190" ph="SELECT ${$fi... ${$this-&gt;TABLE_NAME}" />
+                <marker date="1511697890174" expanded="true" signature="1143:1208" ph="SELECT ${$fi... ${$this-&gt;TABLE_NAME}" />
+                <marker date="1511697890174" expanded="true" signature="1143:1209" ph="SELECT ${$fi... ${$this-&gt;TABLE_NAME}" />
+                <marker date="1511697890174" expanded="true" signature="1143:1216" ph="SELECT ${$fi... ${$this-&gt;TABLE_NAME}" />
+                <marker date="1511697890174" expanded="true" signature="1496:1525" ph="UPDATE ${$th... " />
+                <marker date="1511697890174" expanded="true" signature="1496:1537" ph="UPDATE ${$th... " />
+                <marker date="1511697890174" expanded="true" signature="1815:1862" ph="DELETE FROM " />
+                <marker date="1511697890174" expanded="true" signature="1815:1863" ph="DELETE FROM " />
+                <marker date="1511697890174" expanded="true" signature="1815:1872" ph="DELETE FROM " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="signUp.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/board/signUp/signUp.php">
+      <file leaf-file-name="navipage.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/board/navipage.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="930">
-              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="280">
+              <caret line="398" column="32" lean-forward="false" selection-start-line="398" selection-start-column="32" selection-end-line="398" selection-end-column="32" />
+              <folding>
+                <element signature="n#style#0;n#li#2;n#ul#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#table#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h5#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h5#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#textarea#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h5#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h5#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#textarea#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h5#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -66,8 +81,8 @@
       <file leaf-file-name="loginCheck.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/board/login/loginCheck.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="20" column="25" lean-forward="true" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+            <state relative-caret-position="382">
+              <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -76,35 +91,9 @@
       <file leaf-file-name="connectInfo.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/board/mysqliConnect/connectInfo.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="15" column="28" lean-forward="true" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+            <state relative-caret-position="172">
+              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="loginModel.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/board/login/loginModel.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-              <folding>
-                <marker date="1511591571481" expanded="true" signature="480:492" ph="INSERT INTO $... " />
-                <marker date="1511591571481" expanded="true" signature="1160:1184" ph="SELECT ${$fi... " />
-                <marker date="1511591571481" expanded="true" signature="1160:1185" ph="SELECT ${$fi... ${$this-&gt;TABLE_NAME}" />
-                <marker date="1511591571481" expanded="true" signature="1160:1205" ph="SELECT ${$fi... ${$this-&gt;TABLE_NAME}" />
-                <marker date="1511591571481" expanded="true" signature="1160:1206" ph="SELECT ${$fi... ${$this-&gt;TABLE_NAME}" />
-                <marker date="1511591571481" expanded="true" signature="1160:1207" ph="SELECT ${$fi... ${$this-&gt;TABLE_NAME}" />
-                <marker date="1511591571481" expanded="true" signature="1160:1218" ph="SELECT ${$fi... ${$this-&gt;TABLE_NAME}" />
-                <marker date="1511591571481" expanded="true" signature="1535:1563" ph="UPDATE ${$th... " />
-                <marker date="1511591571481" expanded="true" signature="1535:1575" ph="UPDATE ${$th... " />
-                <marker date="1511591571481" expanded="true" signature="1535:1576" ph="UPDATE ${$th... " />
-                <marker date="1511591571481" expanded="true" signature="1535:1611" ph="UPDATE ${$th... " />
-                <marker date="1511591571481" expanded="true" signature="2223:2235" ph="DELETE FROM " />
-                <marker date="1511591571481" expanded="true" signature="2223:2236" ph="DELETE FROM " />
-                <marker date="1511591571481" expanded="true" signature="2223:2268" ph="DELETE FROM " />
-                <marker date="1511591571481" expanded="true" signature="2223:2269" ph="DELETE FROM " />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -144,10 +133,12 @@
         <option value="$PROJECT_DIR$/board/signUp/signUp.php" />
         <option value="$PROJECT_DIR$/board/boardInfo/boardInfo.php" />
         <option value="$PROJECT_DIR$/board/login/loginModel.php" />
-        <option value="$PROJECT_DIR$/board/boardInfo/boardModel.php" />
-        <option value="$PROJECT_DIR$/board/navipage.html" />
         <option value="$PROJECT_DIR$/board/login/loginCheck.php" />
         <option value="$PROJECT_DIR$/board/mysqliConnect/connectInfo.php" />
+        <option value="$PROJECT_DIR$/board/boardInfo/boardInsert.php" />
+        <option value="$PROJECT_DIR$/board/boardInfo/boardModel.php" />
+        <option value="$PROJECT_DIR$/board/boardInfo/boardAllFile.php" />
+        <option value="$PROJECT_DIR$/board/navipage.html" />
       </list>
     </option>
   </component>
@@ -192,6 +183,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -199,40 +191,16 @@
               <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
               <item name="htdocs" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
-            <path>
-              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="htdocs" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="board" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="htdocs" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="board" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="boardInfo" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="htdocs" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="board" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="login" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
-              <item name="htdocs" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="board" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="mysqliConnect" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/board/login/loginCheck.php" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/board/boardInfo/boardAllFile.php" />
     <property name="settings.editor.selected.configurable" value="settings.php.debug.servers" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
@@ -255,8 +223,13 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="PHP Script.loginCheck">
+  <component name="RunManager" selected="PHP Script.boardAllFile">
+    <configuration name="boardAllFile" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="$PROJECT_DIR$/board/boardInfo/boardAllFile.php" />
     <configuration name="loginCheck" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="$PROJECT_DIR$/board/login/loginCheck.php" />
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="PHP Script.loginCheck" />
+      <item index="1" class="java.lang.String" itemvalue="PHP Script.boardAllFile" />
+    </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
@@ -277,7 +250,8 @@
       <workItem from="1511400390003" duration="14879000" />
       <workItem from="1511518731297" duration="16302000" />
       <workItem from="1511577668502" duration="12667000" />
-      <workItem from="1511593131033" duration="7000" />
+      <workItem from="1511593131033" duration="134000" />
+      <workItem from="1511678633147" duration="17225000" />
     </task>
     <task id="LOCAL-00001" summary="ddd">
       <created>1511259216905</created>
@@ -342,11 +316,18 @@
       <option name="project" value="LOCAL" />
       <updated>1511581197479</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="board (5)">
+      <created>1511593157333</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1511593157333</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44752000" />
+    <option name="totallyTimeSpent" value="62104000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1098" extended-state="6" />
@@ -355,10 +336,10 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39958158" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39958158" sideWeight="0.49791667" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -384,7 +365,8 @@
     <MESSAGE value="board (2)" />
     <MESSAGE value="board (3)" />
     <MESSAGE value="board (4)" />
-    <option name="LAST_COMMIT_MESSAGE" value="board (4)" />
+    <MESSAGE value="board (5)" />
+    <option name="LAST_COMMIT_MESSAGE" value="board (5)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -405,21 +387,28 @@
             <element signature="n#style#0;n#h5#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#textarea#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h5#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h5#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#textarea#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h5#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/board/boardInfo/boardModel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1410">
-          <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+        <state relative-caret-position="840">
+          <caret line="28" column="22" lean-forward="true" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
           <folding>
-            <marker date="1511592309754" expanded="true" signature="457:469" ph="INSERT INTO ${$this-&gt;TABLE_NAME}... " />
-            <marker date="1511592309754" expanded="true" signature="1137:1184" ph="SELECT ${$fi... ${$this-&gt;TABLE_NAME}" />
-            <marker date="1511592309754" expanded="true" signature="1535:1634" ph="UPDATE ${$th... " />
-            <marker date="1511592309754" expanded="true" signature="1913:1960" ph="DELETE FROM " />
-            <marker date="1511592309754" expanded="true" signature="1913:1961" ph="DELETE FROM " />
-            <marker date="1511592309754" expanded="true" signature="1913:1970" ph="DELETE FROM " />
+            <marker date="1511697890174" expanded="true" signature="456:468" ph="INSERT INTO ${$this-&gt;TABLE_NAME}... " />
+            <marker date="1511697890174" expanded="true" signature="1143:1190" ph="SELECT ${$fi... ${$this-&gt;TABLE_NAME}" />
+            <marker date="1511697890174" expanded="true" signature="1143:1208" ph="SELECT ${$fi... ${$this-&gt;TABLE_NAME}" />
+            <marker date="1511697890174" expanded="true" signature="1143:1209" ph="SELECT ${$fi... ${$this-&gt;TABLE_NAME}" />
+            <marker date="1511697890174" expanded="true" signature="1143:1216" ph="SELECT ${$fi... ${$this-&gt;TABLE_NAME}" />
+            <marker date="1511697890174" expanded="true" signature="1496:1525" ph="UPDATE ${$th... " />
+            <marker date="1511697890174" expanded="true" signature="1496:1537" ph="UPDATE ${$th... " />
+            <marker date="1511697890174" expanded="true" signature="1815:1862" ph="DELETE FROM " />
+            <marker date="1511697890174" expanded="true" signature="1815:1863" ph="DELETE FROM " />
+            <marker date="1511697890174" expanded="true" signature="1815:1872" ph="DELETE FROM " />
           </folding>
         </state>
       </provider>
@@ -484,6 +473,95 @@
             <element signature="n#style#0;n#h5#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#textarea#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h5#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h5#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#textarea#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h5#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/board/boardInfo/boardModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1410">
+          <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding>
+            <marker date="1511697890174" expanded="true" signature="456:468" ph="INSERT INTO ${$this-&gt;TABLE_NAME}... " />
+            <marker date="1511697890174" expanded="true" signature="1143:1190" ph="SELECT ${$fi... ${$this-&gt;TABLE_NAME}" />
+            <marker date="1511697890174" expanded="true" signature="1143:1208" ph="SELECT ${$fi... ${$this-&gt;TABLE_NAME}" />
+            <marker date="1511697890174" expanded="true" signature="1143:1209" ph="SELECT ${$fi... ${$this-&gt;TABLE_NAME}" />
+            <marker date="1511697890174" expanded="true" signature="1143:1216" ph="SELECT ${$fi... ${$this-&gt;TABLE_NAME}" />
+            <marker date="1511697890174" expanded="true" signature="1496:1525" ph="UPDATE ${$th... " />
+            <marker date="1511697890174" expanded="true" signature="1496:1537" ph="UPDATE ${$th... " />
+            <marker date="1511697890174" expanded="true" signature="1815:1862" ph="DELETE FROM " />
+            <marker date="1511697890174" expanded="true" signature="1815:1863" ph="DELETE FROM " />
+            <marker date="1511697890174" expanded="true" signature="1815:1872" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/board/signUp/signUp.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="930">
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/board/login/loginCheck.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="20" column="25" lean-forward="true" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/board/mysqliConnect/connectInfo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="15" column="28" lean-forward="true" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/board/login/loginModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <marker date="1511591571481" expanded="true" signature="480:492" ph="INSERT INTO $... " />
+            <marker date="1511591571481" expanded="true" signature="1160:1184" ph="SELECT ${$fi... " />
+            <marker date="1511591571481" expanded="true" signature="1160:1185" ph="SELECT ${$fi... ${$this-&gt;TABLE_NAME}" />
+            <marker date="1511591571481" expanded="true" signature="1160:1205" ph="SELECT ${$fi... ${$this-&gt;TABLE_NAME}" />
+            <marker date="1511591571481" expanded="true" signature="1160:1206" ph="SELECT ${$fi... ${$this-&gt;TABLE_NAME}" />
+            <marker date="1511591571481" expanded="true" signature="1160:1207" ph="SELECT ${$fi... ${$this-&gt;TABLE_NAME}" />
+            <marker date="1511591571481" expanded="true" signature="1160:1218" ph="SELECT ${$fi... ${$this-&gt;TABLE_NAME}" />
+            <marker date="1511591571481" expanded="true" signature="1535:1563" ph="UPDATE ${$th... " />
+            <marker date="1511591571481" expanded="true" signature="1535:1575" ph="UPDATE ${$th... " />
+            <marker date="1511591571481" expanded="true" signature="1535:1576" ph="UPDATE ${$th... " />
+            <marker date="1511591571481" expanded="true" signature="1535:1611" ph="UPDATE ${$th... " />
+            <marker date="1511591571481" expanded="true" signature="2223:2235" ph="DELETE FROM " />
+            <marker date="1511591571481" expanded="true" signature="2223:2236" ph="DELETE FROM " />
+            <marker date="1511591571481" expanded="true" signature="2223:2268" ph="DELETE FROM " />
+            <marker date="1511591571481" expanded="true" signature="2223:2269" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/board/navipage.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#li#2;n#ul#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#table#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h5#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h5#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#textarea#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h5#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h5#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#textarea#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h5#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -540,6 +618,9 @@
             <element signature="n#style#0;n#h5#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#textarea#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h5#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h5#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#textarea#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h5#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -649,34 +730,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/board/loginModal.js" />
     <entry file="file://$PROJECT_DIR$/board/modal.css" />
+    <entry file="file://$PROJECT_DIR$/board/boardInfo/boardInfo.php" />
     <entry file="file://$PROJECT_DIR$/board/signUp/signUp.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="930">
           <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/board/boardInfo/boardInfo.php" />
-    <entry file="file://$PROJECT_DIR$/board/boardInfo/boardModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1410">
-          <caret line="47" column="0" lean-forward="false" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding>
-            <marker date="1511592309754" expanded="true" signature="457:469" ph="INSERT INTO ${$this-&gt;TABLE_NAME}... " />
-            <marker date="1511592309754" expanded="true" signature="1137:1184" ph="SELECT ${$fi... ${$this-&gt;TABLE_NAME}" />
-            <marker date="1511592309754" expanded="true" signature="1535:1634" ph="UPDATE ${$th... " />
-            <marker date="1511592309754" expanded="true" signature="1913:1960" ph="DELETE FROM " />
-            <marker date="1511592309754" expanded="true" signature="1913:1961" ph="DELETE FROM " />
-            <marker date="1511592309754" expanded="true" signature="1913:1970" ph="DELETE FROM " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/board/login/loginCheck.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="20" column="25" lean-forward="true" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
           <folding />
         </state>
       </provider>
@@ -705,18 +763,63 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/board/login/loginCheck.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/board/boardInfo/boardAllFile.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding>
+            <marker date="1511700334722" expanded="true" signature="1055:1081" ph="..." />
+            <marker date="1511700334722" expanded="true" signature="1055:1132" ph="..." />
+            <marker date="1511700334722" expanded="true" signature="1055:1414" ph="..." />
+            <marker date="1511700334722" expanded="true" signature="2236:2313" ph="..." />
+            <marker date="1511700334722" expanded="true" signature="2236:2595" ph="..." />
+            <marker date="1511700334722" expanded="true" signature="3089:3166" ph="..." />
+            <marker date="1511700334722" expanded="true" signature="3089:3448" ph="..." />
+            <marker date="1511700334722" expanded="true" signature="3922:3999" ph="..." />
+            <marker date="1511700334722" expanded="true" signature="3922:4281" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/board/boardInfo/boardModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding>
+            <marker date="1511697890174" expanded="true" signature="456:468" ph="INSERT INTO ${$this-&gt;TABLE_NAME}... " />
+            <marker date="1511697890174" expanded="true" signature="1143:1190" ph="SELECT ${$fi... ${$this-&gt;TABLE_NAME}" />
+            <marker date="1511697890174" expanded="true" signature="1143:1208" ph="SELECT ${$fi... ${$this-&gt;TABLE_NAME}" />
+            <marker date="1511697890174" expanded="true" signature="1143:1209" ph="SELECT ${$fi... ${$this-&gt;TABLE_NAME}" />
+            <marker date="1511697890174" expanded="true" signature="1143:1216" ph="SELECT ${$fi... ${$this-&gt;TABLE_NAME}" />
+            <marker date="1511697890174" expanded="true" signature="1496:1525" ph="UPDATE ${$th... " />
+            <marker date="1511697890174" expanded="true" signature="1496:1537" ph="UPDATE ${$th... " />
+            <marker date="1511697890174" expanded="true" signature="1815:1862" ph="DELETE FROM " />
+            <marker date="1511697890174" expanded="true" signature="1815:1863" ph="DELETE FROM " />
+            <marker date="1511697890174" expanded="true" signature="1815:1872" ph="DELETE FROM " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/board/mysqliConnect/connectInfo.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="15" column="28" lean-forward="true" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
+        <state relative-caret-position="172">
+          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/board/navipage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="54" column="11" lean-forward="false" selection-start-line="54" selection-start-column="11" selection-end-line="54" selection-end-column="11" />
+        <state relative-caret-position="280">
+          <caret line="398" column="32" lean-forward="false" selection-start-line="398" selection-start-column="32" selection-end-line="398" selection-end-column="32" />
           <folding>
             <element signature="n#style#0;n#li#2;n#ul#1;n#div#0;n#nav#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#input#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -725,6 +828,9 @@
             <element signature="n#style#0;n#h5#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#textarea#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#h5#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h5#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#textarea#0;n#div#1;n#div#0;n#div#0;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h5#1;n#div#1;n#div#0;n#div#0;n#div#0;n#div#6;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
