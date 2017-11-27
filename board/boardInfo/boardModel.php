@@ -35,6 +35,21 @@
 
             return $result;
         }
+        //<--------------------------현재 보드 목록-------------------------------------------------------->
+        function selectPage($firstString, $backString) {
+            if($firstString == null || $firstString == "") {
+                $firstString = "*";
+            }
+            if($backString == null || $backString == "") {
+                $backString = " ";
+            }
+
+            $sql         = "SELECT $firstString from ".$this->TABLE_NAME." $backString ";
+
+            $result      = $this->connect->query($sql);
+
+            return $result;
+        }
         //<-----------------------------보드 업데이트------------------------------------------------------>
         function update($boardId, $firstString) {
             $sql         = "UPDATE $this->TABLE_NAME SET $firstString";
