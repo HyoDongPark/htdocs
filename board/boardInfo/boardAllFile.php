@@ -15,22 +15,15 @@
 
     $allSet         = @$_POST['allSet'];
     $firstUp        = @$_POST['firstUp'];
+
     $titleText      = @$_POST['titleText'];
     $contentsText   = @$_POST['contentsText'];
-    $page           = @$_POST['page'];
     $boardId        = @$_POST['boardId'];
     $selectValue    = @$_POST['selectValue'];
     $searchText     = @$_POST['searchText'];
     $updateTitle    = @$_POST['updateTitle'];
     $updateContents = @$_POST['updateContents'];
     $delete         = @$_POST['deleteId'];
-
-    if($selectValue != null && $searchText != null) {
-        unset($_SESSION['searchValue']);
-        unset($_SESSION['searchText']);
-        unset($_SESSION['page']);
-        unset($_SESSION['boardId']);
-    }
 
 
     if($titleText != null && $contentsText != null) {
@@ -61,23 +54,8 @@
               </tr>";
         }
     }
-    else if($page != null && @$_SESSION['searchValue'] == null && $selectValue == null) {
-        $firstString    = "";
-        $backString     = "";
-
-        $result         = $boardObj->select($firstString, $backString, $page);
-
-        while($print = mysqli_fetch_array($result)) {
-            echo "<tr>
-                    <td>$print[board_id]</td>
-                    <td><a id='$print[board_id]'data-target='#modalReading' data-toggle='modal' onclick='reading(event.target.id)'>$print[subject]</a></td>
-                    <td>$print[user_id]</td>
-                    <td>$print[reg_date]</td>
-                    <td>$print[hits]</td>
-                  </tr>";
-        }
-    }
-    else if($selectValue != null && $searchText != null && $page != null && @$_SESSION['searchValue'] == null) {
+    else if($titleText == null && $contentsText == null && $boardId == null && $selectValue != null
+        && $searchText != null && $updateTitle == null && $updateContents == null && $delete == null ) {
 
         switch ($selectValue) {
             case "제목":
@@ -93,12 +71,11 @@
 
         @$_SESSION['searchValue']   = $searchValue;
         @$_SESSION['searchText']    = $searchText;
-        @$_SESSION['page']          = $page;
 
         $firstString                = "";
         $backString                 = "WHERE $searchValue LIKE '%$searchText%'";
 
-        $result                     = $boardObj->select($firstString, $backString, $page);
+        $result                     = $boardObj->select($firstString, $backString, (@$_SESSION['page'] * 5));
 
         while($print = mysqli_fetch_array($result)) {
             echo "<tr>
@@ -110,32 +87,15 @@
               </tr>";
         }
     }
-    else if(@$_SESSION['searchValue'] != null && @$_SESSION['searchText'] != null && $page != null ) {
+    else if($titleText == null && $contentsText == null && $boardId == null && $selectValue == null
+        && $searchText == null && $updateTitle == null && $updateContents == null && $delete == null
+        && @$_SESSION['searchValue'] != null && @$_SESSION['searchText'] != null && $firstUp == null) {
 
         $firstString                = "";
         $backString                 = "WHERE ".@$_SESSION['searchValue']." LIKE '%".@$_SESSION['searchText']."%'";
 
-        @$_SESSION['page']          = $page;
 
-        $result                     = $boardObj->select($firstString, $backString, $page);
-
-        while($print = mysqli_fetch_array($result)) {
-            echo "<tr>
-                <td>$print[board_id]</td>
-                <td><a id='$print[board_id]'data-target='#modalReading' data-toggle='modal' onclick='reading(event.target.id)'>$print[subject]</a></td>
-                <td>$print[user_id]</td>
-                <td>$print[reg_date]</td>
-                <td>$print[hits]</td>
-              </tr>";
-        }
-    }
-    else if(@$_SESSION['searchValue'] != null && @$_SESSION['searchText'] != null && @$_SESSION['page'] != null && $searchText != null
-            || @$_SESSION['searchValue'] != null && @$_SESSION['searchText'] != null &&  $searchText == null && $boardId == null) {
-
-        $firstString                = "";
-        $backString                 = "WHERE ".@$_SESSION['searchValue']." LIKE '%".@$_SESSION['searchText']."%'";
-
-        $result                     = $boardObj->select($firstString, $backString, @$_SESSION['page']);
+        $result                     = $boardObj->select($firstString, $backString, (@$_SESSION['page'] * 5));
 
         while($print = mysqli_fetch_array($result)) {
             echo "<tr>
@@ -147,7 +107,8 @@
               </tr>";
         }
     }
-    else if($boardId != null || @$_SESSION['searchValue'] != null && @$_SESSION['searchText'] != null &&  $boardId != null) {
+    else if($titleText == null && $contentsText == null && $boardId != null && $selectValue == null
+        && $searchText == null && $updateTitle == null && $updateContents == null && $delete == null) {
 
         $firstString                = "subject, contents, hits, user_id";
         $backString                 = "WHERE board_id = '$boardId'";
@@ -161,7 +122,7 @@
 
         @$_SESSION['boardId']       = $boardId;
 
-        $result = $boardObj->select($firstString, $backString, $page);
+        $result = $boardObj->select($firstString, $backString, (@$_SESSION['page'] * 5));
 
         while ($print = mysqli_fetch_array($result)) {
             $title                  = $print['subject'];
@@ -185,7 +146,8 @@
 
         echo $title."|".nl2br($contents)."|".$checkedValue;
     }
-    else if(@$_SESSION['boardId'] != null && $updateTitle != null && $updateContents != null) {
+    else if($titleText == null && $contentsText == null && $boardId == null && $selectValue == null
+        && $searchText == null && $updateTitle != null && $updateContents != null && $delete == null) {
 
         $currentTime    = date("Y-m-d H:m:s");
 
@@ -197,11 +159,10 @@
         echo $boardVal;
     }
     else if($firstUp != null) {
-        $page           = 0;
         $firstString    = "";
-        $backString     = "";
+        $backString     = "WHERE board_id = ".@$_SESSION['boardId'];
 
-        $result         = $boardObj->select($firstString, $backString, $page);
+        $result         = $boardObj->select($firstString, $backString, (@$_SESSION['page'] * 5));
 
         while ($print   = mysqli_fetch_array($result)) {
             $title      = $print['subject'];
@@ -210,7 +171,8 @@
 
         echo $title."|".$contents;
     }
-    else if($delete != null) {
+    else if($titleText == null && $contentsText == null && $boardId == null && $selectValue == null
+        && $searchText == null && $updateTitle == null && $updateContents == null && $delete != null) {
         $boardObj->delete($_SESSION['boardId']);
 
         unset($_SESSION['boardId']);
@@ -218,12 +180,10 @@
         echo "OK";
     }
     else {
-        $page = 0;
-
         $firstString    = "";
         $backString     = "";
 
-        $result         = $boardObj->select($firstString, $backString, $page);
+        $result         = $boardObj->select($firstString, $backString, (@$_SESSION['page'] * 5));
 
         while($print = mysqli_fetch_array($result)) {
             echo "<tr>
