@@ -102,12 +102,12 @@
 
         while($print = mysqli_fetch_array($result)) {
             echo "<tr>
-                    <td>$print[board_id]</td>
-                    <td><a id='$print[user_id]'data-target='#modalReading' data-toggle='modal' onclick='reading(event.target.id)'>$print[subject]</a></td>
-                    <td>$print[user_id]</td>
-                    <td>$print[reg_date]</td>
-                    <td>$print[hits]</td>
-                  </tr>";
+                <td>$print[board_id]</td>
+                <td><a id='$print[board_id]'data-target='#modalReading' data-toggle='modal' onclick='reading(event.target.id)'>$print[subject]</a></td>
+                <td>$print[user_id]</td>
+                <td>$print[reg_date]</td>
+                <td>$print[hits]</td>
+              </tr>";
         }
     }
     else if(@$_SESSION['searchValue'] != null && @$_SESSION['searchText'] != null && $page != null ) {
@@ -121,15 +121,16 @@
 
         while($print = mysqli_fetch_array($result)) {
             echo "<tr>
-                    <td>$print[board_id]</td>
-                    <td><a id='$print[board_id]'data-target='#modalReading' data-toggle='modal' onclick='reading(event.target.id)'>$print[subject]</a></td>
-                    <td>$print[user_id]</td>
-                    <td>$print[reg_date]</td>
-                    <td>$print[hits]</td>
-                  </tr>";
+                <td>$print[board_id]</td>
+                <td><a id='$print[board_id]'data-target='#modalReading' data-toggle='modal' onclick='reading(event.target.id)'>$print[subject]</a></td>
+                <td>$print[user_id]</td>
+                <td>$print[reg_date]</td>
+                <td>$print[hits]</td>
+              </tr>";
         }
     }
-    else if(@$_SESSION['searchValue'] != null && @$_SESSION['searchText'] != null && @$_SESSION['page'] != null) {
+    else if(@$_SESSION['searchValue'] != null && @$_SESSION['searchText'] != null && @$_SESSION['page'] != null && $searchText != null
+            || @$_SESSION['searchValue'] != null && @$_SESSION['searchText'] != null &&  $searchText == null && $boardId == null) {
 
         $firstString                = "";
         $backString                 = "WHERE ".@$_SESSION['searchValue']." LIKE '%".@$_SESSION['searchText']."%'";
@@ -138,15 +139,15 @@
 
         while($print = mysqli_fetch_array($result)) {
             echo "<tr>
-                    <td>$print[board_id]</td>
-                    <td><a id='$print[board_id]'data-target='#modalReading' data-toggle='modal' onclick='reading(event.target.id)'>$print[subject]</a></td>
-                    <td>$print[user_id]</td>
-                    <td>$print[reg_date]</td>
-                    <td>$print[hits]</td>
-                  </tr>";
+                <td>$print[board_id]</td>
+                <td><a id='$print[board_id]'data-target='#modalReading' data-toggle='modal' onclick='reading(event.target.id)'>$print[subject]</a></td>
+                <td>$print[user_id]</td>
+                <td>$print[reg_date]</td>
+                <td>$print[hits]</td>
+              </tr>";
         }
     }
-    else if($boardId != null) {
+    else if($boardId != null || @$_SESSION['searchValue'] != null && @$_SESSION['searchText'] != null &&  $boardId != null) {
 
         $firstString                = "subject, contents, hits, user_id";
         $backString                 = "WHERE board_id = '$boardId'";
