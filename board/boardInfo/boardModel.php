@@ -29,7 +29,7 @@
                 $backString = " ";
             }
 
-            $sql         = "SELECT $firstString from ".$this->TABLE_NAME." $backString LIMIT $page, 5";
+            $sql         = "SELECT $firstString from ".$this->TABLE_NAME." $backString ORDER BY reg_date DESC LIMIT $page, 5";
 
             $result      = $this->connect->query($sql);
 

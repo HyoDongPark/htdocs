@@ -223,20 +223,20 @@
                 $("#logoutValue").hide();
                 $("#write").hide();
             }
-        });
-        $.ajax({
-            type: "POST",
-            url: "pagination/pageFile.php"
-        }).done(function (data) {
-            removePage();
-            $("#pageNation").append(data);
-        });
-        $.ajax({
-            type    : "POST",
-            url     : "boardInfo/boardAllFile.php"
-        }).done(function (data) {
-            removeSet();
-            $("#tbodyValue").append(data);
+            $.ajax({
+                type: "POST",
+                url: "pagination/pageFile.php"
+            }).done(function (data) {
+                removePage();
+                $("#pageNation").append(data);
+                $.ajax({
+                    type    : "POST",
+                    url     : "boardInfo/boardAllFile.php"
+                }).done(function (data) {
+                    removeSet();
+                    $("#tbodyValue").append(data);
+                });
+            });
         });
     }
 
@@ -331,13 +331,13 @@
                 }).done(function (data) {
                     removePage();
                     $("#pageNation").append(data);
-                });
-                removeSet();
-                $.ajax({
-                    type: "POST",
-                    url: "boardInfo/boardAllFile.php"
-                }).done(function (data) {
-                    $("#tbodyValue").append(data);
+                    $.ajax({
+                        type: "POST",
+                        url: "boardInfo/boardAllFile.php"
+                    }).done(function (data) {
+                        removeSet();
+                        $("#tbodyValue").append(data);
+                    });
                 });
             }
         });
@@ -366,13 +366,13 @@
             }).done(function (data) {
                 removePage();
                 $("#pageNation").append(data);
-            });
-            $.ajax({
-                type: "POST",
-                url: "boardInfo/boardAllFile.php"
-            }).done(function (data) {
-                removeSet();
-                $("#tbodyValue").append(data);
+                $.ajax({
+                    type: "POST",
+                    url: "boardInfo/boardAllFile.php"
+                }).done(function (data) {
+                    removeSet();
+                    $("#tbodyValue").append(data);
+                });
             });
         });
     }
@@ -441,15 +441,15 @@
                     }).done(function (data) {
                         removePage();
                         $("#pageNation").append(data);
-                    });
-                    $.ajax({
-                        type: "POST",
-                        url: "boardInfo/boardAllFile.php"
-                    }).done(function (data) {
-                        removeSet();
-                        $("#tbodyValue").append(data);
-                        $("#titleUpdate").val('');
-                        $("#contentsUpdate").val('');
+                        $.ajax({
+                            type: "POST",
+                            url: "boardInfo/boardAllFile.php"
+                        }).done(function (data) {
+                            removeSet();
+                            $("#tbodyValue").append(data);
+                            $("#titleUpdate").val('');
+                            $("#contentsUpdate").val('');
+                        });
                     });
                 });
             });
@@ -478,18 +478,18 @@
         $.ajax({
             type: "POST",
             url: "pagination/pageFile.php",
-            data    : {page : 0}
+            data    : {page : 0 , selectValue : selectValue , searchText : searchValue}
         }).done(function (data) {
             removePage();
             $("#pageNation").append(data);
-        });
-        $.ajax({
-            type: "POST",
-            url : "boardInfo/boardAllFile.php",
-            data: {selectValue : selectValue , searchText : searchValue}
-        }).done(function (data) {
-            removeSet();
-            $("#tbodyValue").append(data);
+            $.ajax({
+                type: "POST",
+                url : "boardInfo/boardAllFile.php",
+                data: {selectValue : selectValue , searchText : searchValue}
+            }).done(function (data) {
+                removeSet();
+                $("#tbodyValue").append(data);
+            });
         });
     }
 
@@ -501,19 +501,18 @@
         }).done(function (data) {
             removePage();
             $("#pageNation").append(data);
-        });
-        $.ajax({
-            type: "POST",
-            url: "boardInfo/boardAllFile.php"
-        }).done(function (data) {
-            removeSet();
-            $("#tbodyValue").append(data);
+            $.ajax({
+                type: "POST",
+                url: "boardInfo/boardAllFile.php"
+            }).done(function (data) {
+                removeSet();
+                $("#tbodyValue").append(data);
+            });
         });
     }
 
     function allSet() {
         $("#search").val("");
-        removeSet();
         $.ajax({
             type: "POST",
             url: "boardInfo/boardAllFile.php",
@@ -521,14 +520,15 @@
                 allSet : 1
             }
         }).done(function (data) {
+            removeSet();
             $("#tbodyValue").append(data);
-        });
-        $.ajax({
-            type: "POST",
-            url: "pagination/pageFile.php"
-        }).done(function (data) {
-            removePage();
-            $("#pageNation").append(data);
+            $.ajax({
+                type: "POST",
+                url: "pagination/pageFile.php"
+            }).done(function (data) {
+                removePage();
+                $("#pageNation").append(data);
+            });
         });
     }
 
