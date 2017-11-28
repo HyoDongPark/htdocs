@@ -122,7 +122,7 @@
 
         @$_SESSION['boardId']       = $boardId;
 
-        $result = $boardObj->select($firstString, $backString, (@$_SESSION['page'] * 5));
+        $result = $boardObj->select($firstString, $backString, $page);
 
         while ($print = mysqli_fetch_array($result)) {
             $title                  = $print['subject'];
