@@ -5,7 +5,7 @@
  * Date: 2017-12-04
  * Time: 오전 10:17
  */
-    header("Content-Type: image/png");
+
     class DataBase {
         const DB_HOST   = "localhost";
         const DB_USER   = "root";
@@ -89,6 +89,8 @@
     }
     else if(!is_null($value)) {
 
+        header("Content-Type: image/png");
+
         $obj        = new DataBase();
 
         $array      = array("Germany", "Mexico", "Sweden", "Korea");
@@ -153,5 +155,26 @@
 
     }
     else {
+        $obj                = new DataBase();
 
+        $array              = array("Germany", "Mexico", "Sweden", "Korea");
+        $percentArray       = array();
+        $tempString         = "";
+        $i                  = 0;
+
+        while ($i != 4) {
+        $allValue           = $obj->selectAll();
+        $result             = $obj->select($array[$i]);
+
+        $result             = (int)$result;
+        $allValue           = (int)$allValue;
+        $percentArray[$i]    = round(($result / $allValue) * 100);
+        $i++;
+        }
+
+        foreach ($percentArray as $value) {
+            $tempString .= $value.",";
+        }
+
+        echo $tempString;
     }

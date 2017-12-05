@@ -73,35 +73,25 @@
     </div>
 </div>
     <script language="JavaScript">
+
         function start() {
             var num = 0;
+            $("#GermanyVote").html('<img src="voting_viewer.php?value='+num+'"/>');
+            num++;
+            $("#MexicoVote").html('<img src="voting_viewer.php?value='+num+'"/>');
+            num++;
+            $("#SwedenVote").html('<img src="voting_viewer.php?value='+num+'"/>');
+            num++;
+            $("#KoreaVote").html('<img src="voting_viewer.php?value='+num+'"/>');
             $.ajax({
-                url         : "voting_viewer.php",
-                type        : "GET"
-            }).done(function () {
-                $("#GermanyVote").html('<img src="voting_viewer.php?value='+num+'"/>');
-                num++;
-                $.ajax({
-                    url         : "voting_viewer.php",
-                    type        : "GET"
-                }).done(function () {
-                    $("#MexicoVote").html('<img src="voting_viewer.php?value='+num+'"/>');
-                    num++;
-                    $.ajax({
-                        url         : "voting_viewer.php",
-                        type        : "GET"
-                    }).done(function () {
-                        $("#SwedenVote").html('<img src="voting_viewer.php?value='+num+'"/>');
-                        num++;
-                        $.ajax({
-                            url         : "voting_viewer.php",
-                            type        : "GET"
-                        }).done(function () {
-                            $("#KoreaVote").html('<img src="voting_viewer.php?value='+num+'"/>');
-                            num = 0;
-                        });
-                    });
-                });
+                url     : "voting_viewer.php",
+                type    : "GET"
+            }).done(function (data) {
+                var result = data.split(',');
+                $("#GermanyVote").append('<font class="contents_font">'+' [ '+result[0]+'% ] '+'</font>');
+                $("#MexicoVote").append('<font class="contents_font">'+' [ '+result[1]+'% ] '+'</font>');
+                $("#SwedenVote").append('<font class="contents_font">'+' [ '+result[2]+'% ] '+'</font>');
+                $("#KoreaVote").append('<font class="contents_font">'+' [ '+result[3]+'% ] '+'</font>');
             });
         }
 
@@ -113,35 +103,24 @@
                 type    : "GET",
                 data    : "firstTeam=" + checkedValue
             }).done(function () {
+                $("#GermanyVote").html('<img src="voting_viewer.php?value='+num+'"/>');
+                num++;
+                $("#MexicoVote").html('<img src="voting_viewer.php?value='+num+'"/>');
+                num++;
+                $("#SwedenVote").html('<img src="voting_viewer.php?value='+num+'"/>');
+                num++;
+                $("#KoreaVote").html('<img src="voting_viewer.php?value='+num+'"/>');
                 $.ajax({
-                    url         : "voting_viewer.php",
-                    type        : "GET"
-                }).done(function () {
-                    $("#GermanyVote").html('<img src="voting_viewer.php?value='+num+'"/>');
-                    num++;
-                    $.ajax({
-                        url         : "voting_viewer.php",
-                        type        : "GET"
-                    }).done(function () {
-                        $("#MexicoVote").html('<img src="voting_viewer.php?value='+num+'"/>');
-                        num++;
-                        $.ajax({
-                            url         : "voting_viewer.php",
-                            type        : "GET"
-                        }).done(function () {
-                            $("#SwedenVote").html('<img src="voting_viewer.php?value='+num+'"/>');
-                            num++;
-                            $.ajax({
-                                url         : "voting_viewer.php",
-                                type        : "GET"
-                            }).done(function () {
-                                $("#KoreaVote").html('<img src="voting_viewer.php?value='+num+'"/>');
-                                num = 0;
-                                location.reload();
-                            });
-                        });
-                    });
+                    url     : "voting_viewer.php",
+                    type    : "GET"
+                }).done(function (data) {
+                    var result = data.split(',');
+                    $("#GermanyVote").append('<font class="contents_font">'+' [ '+result[0]+'% ] '+'</font>');
+                    $("#MexicoVote").append('<font class="contents_font">'+' [ '+result[1]+'% ] '+'</font>');
+                    $("#SwedenVote").append('<font class="contents_font">'+' [ '+result[2]+'% ] '+'</font>');
+                    $("#KoreaVote").append('<font class="contents_font">'+' [ '+result[3]+'% ] '+'</font>');
                 });
+                location.reload();
             });
         }
     </script>
