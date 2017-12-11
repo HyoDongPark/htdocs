@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ef03bdf3-eca7-480f-a0b0-e4233b48b0ad" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/chatSystem/chat/chatData.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/chatSystem/chat/chatUserList.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/chatSystem/chat/chatlist.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/chatSystem/connect/foundationDatabase.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/chatSystem/login/login.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/chatSystem/login/loginData.php" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/chatSystem/chat/chatlist.php" afterPath="$PROJECT_DIR$/chatSystem/chat/chatList.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/voteSystem/voting_form.html" afterPath="$PROJECT_DIR$/voteSystem/voting_form.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chatSystem/chat/chatData.php" afterPath="$PROJECT_DIR$/chatSystem/chat/chatData.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chatSystem/chat/chatUserList.php" afterPath="$PROJECT_DIR$/chatSystem/chat/chatUserList.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chatSystem/login/loginData.php" afterPath="$PROJECT_DIR$/chatSystem/login/loginData.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -34,13 +31,13 @@
       <file leaf-file-name="loginData.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chatSystem/login/loginData.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="34" column="17" lean-forward="false" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
+            <state relative-caret-position="450">
+              <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding>
-                <marker date="1512966333738" expanded="true" signature="365:377" ph="INSERT INTO ${loginData::TABLE_NAME}... " />
-                <marker date="1512966333738" expanded="true" signature="365:404" ph="INSERT INTO ${loginData::TABLE_NAME}... " />
-                <marker date="1512966333738" expanded="true" signature="365:467" ph="INSERT INTO ${loginData::TABLE_NAME}... " />
-                <marker date="1512966333738" expanded="true" signature="365:469" ph="INSERT INTO ${loginData::TABLE_NAME}... " />
+                <marker date="1512992634852" expanded="true" signature="367:379" ph="INSERT INTO ${loginData::TABLE_NAME}... " />
+                <marker date="1512992634852" expanded="true" signature="367:406" ph="INSERT INTO ${loginData::TABLE_NAME}... " />
+                <marker date="1512992634852" expanded="true" signature="367:469" ph="INSERT INTO ${loginData::TABLE_NAME}... " />
+                <marker date="1512992634852" expanded="true" signature="367:471" ph="INSERT INTO ${loginData::TABLE_NAME}... " />
               </folding>
             </state>
           </provider>
@@ -49,11 +46,13 @@
       <file leaf-file-name="chatData.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/chatSystem/chat/chatData.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="570">
-              <caret line="28" column="9" lean-forward="true" selection-start-line="12" selection-start-column="8" selection-end-line="28" selection-end-column="9" />
+            <state relative-caret-position="-162">
+              <caret line="12" column="41" lean-forward="true" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
               <folding>
-                <marker date="1512990284255" expanded="true" signature="304:335" ph="SELECT * FRO... " />
-                <marker date="1512990284255" expanded="true" signature="304:370" ph="SELECT room_... userinfo" />
+                <marker date="1512992377397" expanded="true" signature="308:339" ph="SELECT * FRO... " />
+                <marker date="1512992377397" expanded="true" signature="308:374" ph="SELECT room_... userinfo" />
+                <marker date="1512992377397" expanded="true" signature="1186:1198" ph="INSERT INTO ${$tableName}... " />
+                <marker date="1512992377397" expanded="true" signature="2030:2041" ph="DROP TABLE $... " />
               </folding>
             </state>
           </provider>
@@ -62,25 +61,28 @@
       <file leaf-file-name="chatUserList.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/chatSystem/chat/chatUserList.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="630">
+              <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
               <folding>
-                <marker date="1512990572179" expanded="true" signature="284:350" ph="SELECT room_... userinfo" />
+                <marker date="1512993512296" expanded="true" signature="307:373" ph="SELECT room_... userinfo" />
+                <marker date="1512993512296" expanded="true" signature="979:991" ph="INSERT INTO ${$tableName}... " />
+                <marker date="1512993512296" expanded="true" signature="1404:1428" ph="SELECT ${$fi... " />
+                <marker date="1512993512296" expanded="true" signature="1404:1429" ph="SELECT ${$fi... ${$tableName}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="chatlist.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/chatSystem/chat/chatlist.php">
+      <file leaf-file-name="chatList.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/chatSystem/chat/chatList.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="9" column="45" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="45" />
+            <state relative-caret-position="0">
+              <caret line="3" column="18" lean-forward="true" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
               <folding>
-                <marker date="1512983771169" expanded="true" signature="1044:1055" ph="DROP TABLE $... " />
-                <marker date="1512983771169" expanded="true" signature="1044:1096" ph="DROP TABLE $... " />
-                <marker date="1512983771169" expanded="true" signature="1044:1097" ph="DROP TABLE $... " />
-                <marker date="1512983771169" expanded="true" signature="1044:1107" ph="DROP TABLE $... " />
+                <marker date="1512992377407" expanded="true" signature="1052:1063" ph="DROP TABLE $... " />
+                <marker date="1512992377407" expanded="true" signature="1052:1104" ph="DROP TABLE $... " />
+                <marker date="1512992377407" expanded="true" signature="1052:1105" ph="DROP TABLE $... " />
+                <marker date="1512992377407" expanded="true" signature="1052:1115" ph="DROP TABLE $... " />
               </folding>
             </state>
           </provider>
@@ -108,7 +110,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/_2017_11_23/sub1/opa.php" />
         <option value="$PROJECT_DIR$/_2017_11_23/util/test.php" />
         <option value="$PROJECT_DIR$/_2017_11_23/until/test.php" />
         <option value="$PROJECT_DIR$/_2017_11_23/namespace.php" />
@@ -155,9 +156,10 @@
         <option value="$PROJECT_DIR$/chatSystem/baseDatabase.php" />
         <option value="$PROJECT_DIR$/chatSystem/loginData.php" />
         <option value="$PROJECT_DIR$/chatSystem/connect/foundationData.php" />
-        <option value="$PROJECT_DIR$/chatSystem/login/loginData.php" />
         <option value="$PROJECT_DIR$/chatSystem/chat/chatlist.php" />
         <option value="$PROJECT_DIR$/chatSystem/chat/chatData.php" />
+        <option value="$PROJECT_DIR$/chatSystem/chat/chatList.php" />
+        <option value="$PROJECT_DIR$/chatSystem/login/loginData.php" />
         <option value="$PROJECT_DIR$/chatSystem/chat/chatUserList.php" />
       </list>
     </option>
@@ -230,6 +232,18 @@
               <item name="htdocs" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="chatSystem" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="chat" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="htdocs" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="chatSystem" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="connect" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="htdocs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="htdocs" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="chatSystem" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="login" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
           </expand>
           <select />
@@ -311,7 +325,7 @@
       <workItem from="1512347780386" duration="27573000" />
       <workItem from="1512440303695" duration="25638000" />
       <workItem from="1512628569388" duration="2000" />
-      <workItem from="1512946981052" duration="9410000" />
+      <workItem from="1512946981052" duration="12348000" />
     </task>
     <task id="LOCAL-00001" summary="ddd">
       <created>1511259216905</created>
@@ -467,16 +481,23 @@
       <option name="project" value="LOCAL" />
       <updated>1512476727192</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="chatSystem(1)">
+      <created>1512990591350</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1512990591350</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="180458000" />
+    <option name="totallyTimeSpent" value="183396000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1911" y="-9" width="1938" height="1098" extended-state="6" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13372718" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13372718" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39958158" sideWeight="0.50208336" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -520,7 +541,8 @@
     <MESSAGE value="board (13)" />
     <MESSAGE value="Image" />
     <MESSAGE value="vote system" />
-    <option name="LAST_COMMIT_MESSAGE" value="vote system" />
+    <MESSAGE value="chatSystem(1)" />
+    <option name="LAST_COMMIT_MESSAGE" value="chatSystem(1)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -829,14 +851,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chatSystem/connect/foundationDatabase.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="8" column="37" lean-forward="false" selection-start-line="8" selection-start-column="37" selection-end-line="8" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/chatSystem/login/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="510">
@@ -845,49 +859,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chatSystem/login/loginData.php">
+    <entry file="file://$PROJECT_DIR$/chatSystem/connect/foundationDatabase.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="34" column="17" lean-forward="false" selection-start-line="34" selection-start-column="17" selection-end-line="34" selection-end-column="17" />
-          <folding>
-            <marker date="1512966333738" expanded="true" signature="365:377" ph="INSERT INTO ${loginData::TABLE_NAME}... " />
-            <marker date="1512966333738" expanded="true" signature="365:404" ph="INSERT INTO ${loginData::TABLE_NAME}... " />
-            <marker date="1512966333738" expanded="true" signature="365:467" ph="INSERT INTO ${loginData::TABLE_NAME}... " />
-            <marker date="1512966333738" expanded="true" signature="365:469" ph="INSERT INTO ${loginData::TABLE_NAME}... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chatSystem/chat/chatlist.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="45" lean-forward="false" selection-start-line="9" selection-start-column="4" selection-end-line="9" selection-end-column="45" />
-          <folding>
-            <marker date="1512983771169" expanded="true" signature="1044:1055" ph="DROP TABLE $... " />
-            <marker date="1512983771169" expanded="true" signature="1044:1096" ph="DROP TABLE $... " />
-            <marker date="1512983771169" expanded="true" signature="1044:1097" ph="DROP TABLE $... " />
-            <marker date="1512983771169" expanded="true" signature="1044:1107" ph="DROP TABLE $... " />
-          </folding>
+        <state relative-caret-position="990">
+          <caret line="33" column="39" lean-forward="true" selection-start-line="33" selection-start-column="39" selection-end-line="33" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/chatSystem/chat/chatData.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="28" column="9" lean-forward="true" selection-start-line="12" selection-start-column="8" selection-end-line="28" selection-end-column="9" />
+        <state relative-caret-position="-162">
+          <caret line="12" column="41" lean-forward="true" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
           <folding>
-            <marker date="1512990284255" expanded="true" signature="304:335" ph="SELECT * FRO... " />
-            <marker date="1512990284255" expanded="true" signature="304:370" ph="SELECT room_... userinfo" />
+            <marker date="1512992377397" expanded="true" signature="308:339" ph="SELECT * FRO... " />
+            <marker date="1512992377397" expanded="true" signature="308:374" ph="SELECT room_... userinfo" />
+            <marker date="1512992377397" expanded="true" signature="1186:1198" ph="INSERT INTO ${$tableName}... " />
+            <marker date="1512992377397" expanded="true" signature="2030:2041" ph="DROP TABLE $... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chatSystem/login/loginData.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="21" column="0" lean-forward="true" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding>
+            <marker date="1512992634852" expanded="true" signature="367:379" ph="INSERT INTO ${loginData::TABLE_NAME}... " />
+            <marker date="1512992634852" expanded="true" signature="367:406" ph="INSERT INTO ${loginData::TABLE_NAME}... " />
+            <marker date="1512992634852" expanded="true" signature="367:469" ph="INSERT INTO ${loginData::TABLE_NAME}... " />
+            <marker date="1512992634852" expanded="true" signature="367:471" ph="INSERT INTO ${loginData::TABLE_NAME}... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chatSystem/chat/chatList.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="3" column="18" lean-forward="true" selection-start-line="3" selection-start-column="18" selection-end-line="3" selection-end-column="18" />
+          <folding>
+            <marker date="1512992377407" expanded="true" signature="1052:1063" ph="DROP TABLE $... " />
+            <marker date="1512992377407" expanded="true" signature="1052:1104" ph="DROP TABLE $... " />
+            <marker date="1512992377407" expanded="true" signature="1052:1105" ph="DROP TABLE $... " />
+            <marker date="1512992377407" expanded="true" signature="1052:1115" ph="DROP TABLE $... " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/chatSystem/chat/chatUserList.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="630">
+          <caret line="45" column="0" lean-forward="true" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
           <folding>
-            <marker date="1512990572179" expanded="true" signature="284:350" ph="SELECT room_... userinfo" />
+            <marker date="1512993512296" expanded="true" signature="307:373" ph="SELECT room_... userinfo" />
+            <marker date="1512993512296" expanded="true" signature="979:991" ph="INSERT INTO ${$tableName}... " />
+            <marker date="1512993512296" expanded="true" signature="1404:1428" ph="SELECT ${$fi... " />
+            <marker date="1512993512296" expanded="true" signature="1404:1429" ph="SELECT ${$fi... ${$tableName}" />
           </folding>
         </state>
       </provider>

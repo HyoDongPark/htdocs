@@ -8,7 +8,7 @@
     include "../connect/foundationDatabase.php";
 
     class chatData extends foundationDatabase {
-        private $check;
+        private $check = 0;
 
         function tableNameSearch($userId)
         {
@@ -36,19 +36,35 @@
 
         function insert($roomNum, $userName, $userChat, $userId) {
             $tableName          = $this->tableNameSearch($userId);
-            $tableNameUserList  = $tableName."_user";
 
+            $sql                = "INSERT INTO $tableName ";
+            $sql               .= "(room_num,user_name,user_chat) ";
+            $sql               .= "VALUES ($roomNum,'$userName','$userChat')";
+
+            $this->check        = $this->connection->query($sql);
+
+            return $this->check;
         }
 
-        function select() {
+        function select($firstString,$intoTime,$userId) {
+            $tableName          = $this->tableNameSearch($userId);
 
+            $sql                = "SELECT $firstString ";
+            $sql               .= "FROM $tableName ";
+            $sql               .= "WHERE user_chat_time > $intoTime";
+
+            $this->check        = $this->connection->query($sql);
+
+            return $this->check;
         }
 
-        function update() {
+        function delete($userId) {
+            $tableName          = $this->tableNameSearch($userId);
 
-        }
+            $sql                = "DROP TABLE $tableName";
 
-        function delete() {
+            $this->check        = $this->connection->query($sql);
 
+            return $this->check;
         }
     }

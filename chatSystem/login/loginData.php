@@ -12,11 +12,11 @@
 
         private $check;
         //유저 회원 가입
-        function insert($userId,$userPass,$userName) {
+        function insert($userId, $userPass, $userName) {
             $sql            = "INSERT INTO ".loginData::TABLE_NAME." ";
             $sql           .= "(user_id, password, user_name) ";
             $sql           .= "VALUES ";
-            $sql           .= "$userId, $userPass, $userName";
+            $sql           .= "('$userId', '$userPass', '$userName')";
 
             $this->check    = $this->connection->query($sql);
 
@@ -33,11 +33,11 @@
             return $this->check;
         }
         //유저 업데이트
-        function update($firstString,$backString) {
+        function update($updateValue, $userId) {
             $sql            = "UPDATE ".loginData::TABLE_NAME." ";
             $sql           .= "SET ";
-            $sql           .= "$firstString ";
-            $sql           .= "$backString";
+            $sql           .= "$updateValue ";
+            $sql           .= "WHERE user_id = '$userId'";
 
             $this->check    = $this->connection->query($sql);
 
