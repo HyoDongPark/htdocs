@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ListPage</title>
+
+    <!--jquery install file link-->
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <!--min the newest javascript-->
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!--min the newest css bootstrap-->
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!--sub theme min-->
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
+</head>
+<body onload="baseValue()">
+    <div class="container">
+        <table class="table table-bordered" style="text-align: center">
+            <thead>
+                <tr>
+                    <td>방 번호</td>
+                    <td>방 이름</td>
+                    <td>방 마스터</td>
+                    <td>방 인원</td>
+                </tr>
+            </thead>
+            <tbody id="roomList">
+
+            </tbody>
+        </table>
+        <hr>
+        <div class="pull-right">
+            <button id="roomMakeBut" data-target="#modalRoomMake" data-toggle="modal">방 만들기</button>
+        </div>
+    </div>
+    <!---->
+    <div class="modal fade" id="modalRoomMake">
+        <div class="container">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button class="close" data-dismiss="modal">x</button>
+                        <h2 class="modal-title">방 만들기</h2>
+                    </div>
+                    <div class="modal-body">
+                        <h4 class="modal-title">방 제목</h4>
+                        <input class="form-control" type="text" id="modalCreateRoomTitle" name="modalCreateRoomTitle">
+                        <h5 style="color: red; display : none" id="modalCreateRoomTitlePoor">* 제목이 없습니다.</h5>
+                        <br>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn-success" id="roomMakeOk" data-target="#modalRoomChat" data-toggle="modal" onclick="roomMake()">방 생성</button>
+                        <button class="btn-danger" name="close" data-dismiss="modal">나가기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---->
+    <!---->
+    <div class="modal fade" id="modalRoomChat">
+        <div class="container">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button class="close" data-dismiss="modal">x</button>
+                        <h2 class="modal-title" id="modalRoomTitle"></h2>
+                        <div class="container" style="display: inline-block">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <td>유저 닉네임</td>
+                                        <td>권한</td>
+                                    </tr>
+                                </thead>
+                                <tbody id="modalUserList">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container" style="border: 1px solid gray; width: 300px; height: 450px; overflow: auto" id="chatTextValue">
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn-danger" name="close" data-dismiss="modal" onclick="outChatRoom()">나가기</button>
+                        <input type="text" class="form-control" id="modalChatContents" name="modalChatContents">
+                        <button class="btn-success" id="modalChatOk" onclick="">전송</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---->
+    <script language="JavaScript">
+
+        function baseValue() {
+            $.ajax({
+                url : "control/baseControl.php"
+            });
+            roomListSet();
+        }
+
+        function roomChatSet(check) {
+            var Interval = setInterval(restartChatGo,300);
+
+            if(check == 'N'){
+                clearInterval(Interval);
+                outChatRoom();
+            }
+        }
+
+        function roomListSet() {
+            setInterval(restartRoomListGo,300);
+        }
+
+        function restartChatGo() {
+            $.ajax({
+                url : "chat/chatCreateAndChatList.php"
+            }).done(function (roomChatReSet) {
+                $("#chatTextValue").html(roomChatReSet);
+                $.ajax({
+                    type: "POST",
+                    url : "chat/chatCreateAndChatList.php",
+                    data: {check: 1}
+                }).done(function (roomUserListInsert) {
+                    $("#modalUserList").html(roomUserListInsert);
+                });
+            });
+        }
+
+        function restartRoomListGo() {
+            $.ajax({
+                url : "chat/chatListCon.php"
+            }).done(function (roomList) {
+                $("#roomList").html(roomList);
+            });
+        }
+
+        function roomMake() {
+            var RoomMakeTitle = $("#modalCreateRoomTitle").val();
+
+            if(RoomMakeTitle == "" || RoomMakeTitle == null) {
+                $("#modalCreateRoomTitlePoor").show();
+            }
+            else {
+                $("#modalCreateRoomTitlePoor").hide();
+                $.ajax({
+                    type: "POST",
+                    url : "chat/chatCreateAndChatList.php",
+                    data: {
+                        RoomTitle: RoomMakeTitle
+                    }
+                }).done(function (roomCreateOk) {
+                    if(roomCreateOk == "Y") {
+                        $("#modalRoomMake").modal('hide');
+                        roomChatSet();
+                    }
+                });
+            }
+        }
+
+        function intoRoom(targetId) {
+            $("#modalRoomChat").modal('show');
+            $.ajax({
+                type: "POST",
+                url : "chat/chatIntoOrOut.php",
+                data: {
+                    RoomNum : targetId
+                }
+            }).done(function () {
+                $.ajax({
+                    type: "POST",
+                    url : "chat/chatUserListGet.php",
+                    data: {
+                        RoomNum : targetId
+                    }
+                }).done(function () {
+                    $("#modalRoomChat").modal('show');
+                    var chat = $("#modalChatContents").val();
+                    $.ajax({
+                        type: "POST",
+                        url : "chat/insertBut.php",
+                        data: {
+                            RoomNum : targetId,
+                            userChat: chat
+                        }
+                    }).done(function () {
+                        $("#modalRoomChat").modal('show');
+                        roomChatSet();
+                    });
+                });
+            });
+        }
+
+        function outChatRoom() {
+            $("#modalRoomChat").hide();
+            $.ajax({
+                url : "chat/chatIntoOrOut.php"
+            });
+            roomChatSet("N");
+        }
+
+        function roomInsert() {
+            $.ajax({
+                type: "POST",
+                url : "chat/chatUserListGet.php",
+                data: {
+                    RoomNum : targetId
+                }
+            }).done(function () {
+                $("#modalRoomChat").modal('show');
+                roomChatSet();
+            });
+        }
+    </script>
+</body>
+</html>

@@ -5,7 +5,7 @@
  * Date: 2017-12-11
  * Time: 오후 1:23
  */
-    include "../connect/foundationDatabase.php";
+    require_once '../classes.php';
 
     class chatData extends foundationDatabase {
         private $check = 0;
@@ -29,9 +29,15 @@
         }
 
         function create($roomName, $userId) {
-            $sql                = "CALL room_make($roomName, $userId, $this->check)";
-
+            $sql                = "CALL chatsystem.room_make('$roomName', '$userId',@RESULT)";
+            $this->connection->query($sql);
+            $sql                = "SELECT @RESULT";
             $this->check        = $this->connection->query($sql);
+
+            while($print        = mysqli_fetch_row($this->check)) {
+                $temp           = $print[0];
+            }
+            return $temp;
         }
 
         function insert($roomNum, $userName, $userChat, $userId) {
@@ -46,10 +52,10 @@
             return $this->check;
         }
 
-        function select($firstString,$intoTime,$userId) {
+        function select($intoTime,$userId) {
             $tableName          = $this->tableNameSearch($userId);
 
-            $sql                = "SELECT $firstString ";
+            $sql                = "SELECT  user_name, user_chat";
             $sql               .= "FROM $tableName ";
             $sql               .= "WHERE user_chat_time > $intoTime";
 

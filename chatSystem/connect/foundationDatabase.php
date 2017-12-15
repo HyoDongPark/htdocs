@@ -6,21 +6,21 @@
  * Time: 오전 8:08
  */
     class foundationDatabase {
-        const DATA_LOCAL            = "localhost";
-        const DATA_USER             = "root";
-        const DATA_PASS             = "qweasd45";
-        const DATA_NAME             = "chat";
-        const DATA_PORT             = "3306";
+        protected $DATA_LOCAL       = "localhost";
+        protected $DATA_USER        = "root";
+        protected $DATA_PASS        = "qweasd45";
+        protected $DATA_NAME        = "chatsystem";
+        protected $DATA_PORT        = "3306";
 
         protected $connection;
 
         function __construct() {
             $this->connection       = new mysqli(
-                foundationData::DATA_LOCAL,
-                foundationData::DATA_USER,
-                foundationData::DATA_PASS,
-                foundationData::DATA_NAME,
-                foundationData::DATA_PORT
+                $this->DATA_LOCAL,
+                $this->DATA_USER,
+                $this->DATA_PASS,
+                $this->DATA_NAME,
+                $this->DATA_PORT
             );
 
             if($this->connection->connect_errno) {
@@ -28,9 +28,8 @@
                 exit();
             }
         }
-
-        function __destruct() {
-            // TODO: Implement __destruct() method.
+        function __destruct()
+        {
             $this->connection->close();
         }
     }

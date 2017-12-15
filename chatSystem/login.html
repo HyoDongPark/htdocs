@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <!--jquery install file link-->
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <!--min the newest javascript-->
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!--min the newest css bootstrap-->
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!--sub theme min-->
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
+</head>
+<body onload="baseValue()">
+    <div class="container">
+        <div style="border: 2px solid blue; width: auto; height: auto; display: block" class="container">
+            <h3>ID (영문과숫자 조합) :</h3> <input style="width: 70%" type="text" id="IdValue" name="IdValue">
+            <h3>PW (영문과숫자 조합) :</h3> <input style="width: 70%" type="password" id="PwValue" name="PwValue">
+            <hr>
+            <div class="pull-right" style="padding-bottom: 7px">
+                <button class="btn-default" onclick="window.location.href = 'newHuman.html'">회원가입</button>
+                <button class="btn-success" style="margin-left: auto" onclick="login()">로그인</button>
+            </div>
+        </div>
+    </div>
+
+    <script language="JavaScript">
+        function baseValue() {
+            $.ajax({
+                url : "control/baseControl.php"
+            });
+        }
+        function login() {
+            var idValue = $("#IdValue").val();
+            var pwValue = $("#PwValue").val();
+
+            $.ajax({
+                type: "POST",
+                url : "login/loginOrCreateCon.php",
+                data: {
+                    IdValue: idValue,
+                    PwValue: pwValue
+                }
+            }).done(function (data) {
+                if(data == "Y") {
+                    window.location.href = "roomListPage.html"
+                }
+                else {
+                    alert("아이디 비번을 확인하세요");
+                    $("#IdValue").val("");
+                    $("#PwValue").val("");
+                }
+            });
+        }
+    </script>
+</body>
+</html>

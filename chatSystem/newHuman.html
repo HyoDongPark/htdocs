@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New</title>
+    <!--jquery install file link-->
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+    <!--min the newest javascript-->
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!--min the newest css bootstrap-->
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <!--sub theme min-->
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap-theme.min.css">
+</head>
+<body onload="baseValue()">
+    <div class="container">
+        <div class="container" style="border: 2px solid green; height: auto; width: auto">
+            <h2>ID (영문과숫자 조합) :</h2><input type="text" id="newId" name="newId" style="width: 70%"><br>
+            <h2>PW (영문과숫자 조합) :</h2><input type="password" id="newPw" name="newPw" style="width: 70%"><br>
+            <h2>NicName :</h2><input type="text" id="nicName" name="nicName" style="width: 70%"><br>
+            <hr>
+            <div class="pull-right" style="padding-bottom: 7px">
+                <button class="btn-success" onclick="newHuman()">회원가입</button>
+                <button class="btn-danger" onclick="window.location.href='login.html'">돌아가기</button>
+            </div>
+        </div>
+    </div>
+
+    <script language="JavaScript">
+        function baseValue() {
+            $.ajax({
+                url : "control/baseControl.php"
+            });
+        }
+
+        function escapeRegExp(string){
+            var checked = /[^A-Za-z0-9_]/g;
+
+            if(checked.test(string)) {
+                $.ajax({
+                    url : "address/CountBenNum.php"
+                });
+                return true;
+            }
+            else
+                return false;
+        }
+
+        function newHuman() {
+            var idValue     = $("#newId").val();
+            var pwValue     = $("#newPw").val();
+            var nicValue    = $("#nicName").val();
+
+            var checkedRun  = escapeRegExp(idValue);
+
+            if(checkedRun) {
+                alert("ID 에는 영어 숫자만 가능합니다.");
+                $("#newId").val("");
+                $.ajax({
+                    url : "address/CountBenNum.php"
+                });
+            }
+            else {
+                $.ajax({
+                    type: "POST",
+                    url : "login/loginOrCreateCon.php",
+                    data: {
+                        NewIdValue     : idValue,
+                        NewPwValue     : pwValue,
+                        NewNicValue    : nicValue
+                    }
+                }).done(function (data) {
+                    if(data == "Y") {
+                        alert("로그인을 해주세요.");
+                        location.href = "login.html";
+                    }
+                    else {
+                        alert("아이디 또는 닉네임이 겹칩니다.");
+                        $("#newId").val("");
+                        $("#newPw").val("");
+                        $("#nicName").val("");
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>

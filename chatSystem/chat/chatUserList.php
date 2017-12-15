@@ -5,7 +5,7 @@
  * Date: 2017-12-11
  * Time: 오후 8:06
  */
-    include "../connect/foundationDatabase.php";
+    require_once '../classes.php';
 
     class chatUserList extends foundationDatabase {
         private $check;
@@ -28,11 +28,19 @@
         }
 
         function insert($roomNum, $userName, $userId) {
-            $tableName          = chatUserList::tableNameSearch($userId);
+            $tableName          = $this->tableNameSearch($userId);
+
+            $result             = $this->select("COUNT(*)", $userId);
+
+            $print              = mysqli_fetch_row($result);
+
+            $intoNum            = $print[0];
+
+            $intoNum++;
 
             $sql                = "INSERT INTO $tableName ";
-            $sql               .= "(room_num, user_name) ";
-            $sql               .= "VALUES ('$roomNum', '$userName')";
+            $sql               .= "(room_num, user_name, room_position) ";
+            $sql               .= "VALUES ($roomNum, '$userName', $intoNum)";
 
             $this->check        = $this->connection->query($sql);
 
@@ -40,18 +48,39 @@
         }
 
         function select($firstString,$userId) {
-            $tableName          = chatUserList::tableNameSearch($userId);
+            $tableName          = $this->tableNameSearch($userId);
             $sql                = "SELECT $firstString FROM $tableName";
             $this->check        = $this->connection->query($sql);
 
             return $this->check;
         }
 
-        function update() {
+        function selectAll($firstString,$backString,$roomName) {
+            $sql                = "SELECT $firstString FROM $roomName ";
+            $sql               .= "WHERE $backString";
+            $this->check        = $this->connection->query($sql);
 
+            return $this->check;
         }
 
-        function delete() {
+        function update($userId) {
+            $tableName          = $this->tableNameSearch($userId);
 
+            $sql                = "UPDATE $tableName SET room_master = 'master' WHERE room_position = ";
+            $sql               .= "(SELECT MIN(room_position) FROM $tableName)";
+
+            $this->check        = $this->connection->query($sql);
+
+            return $this->check;
+        }
+
+        function delete($userName,$userId) {
+            $tableName          = $this->tableNameSearch($userId);
+
+            $sql                = "DELETE FROM $tableName WHERE user_name = '$userName'";
+
+            $this->check        = $this->connection->query($sql);
+
+            return $this->check;
         }
     }
