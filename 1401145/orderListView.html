@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+</head>
+<body onload="onLoadFile()">
+    <h3></h3>
+    <table>
+        <thead>
+            <tr>
+                <td>순번</td>
+                <td>제품명</td>
+                <td>수량</td>
+                <td>단가</td>
+                <td>금액</td>
+                <td>주문시간</td>
+            </tr>
+        </thead>
+        <tbody id="orderList">
+
+        </tbody>
+    </table>
+    <input type="button" value="돌아가기" onclick="backReturn()">
+
+    <script language="JavaScript">
+        function onLoadFile() {
+            $.ajax({
+                type        : "POST",
+                url         : "orderList.php",
+                xhrFields   : {
+                    withCredentials: true
+                },
+                crossDomain : true
+            }).done(function (result) {
+                $("#orderList").html(result);
+            });
+        }
+
+        function backReturn() {
+            location.href = "itemListUpView.html";
+        }
+    </script>
+</body>
+</html>

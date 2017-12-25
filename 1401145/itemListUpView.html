@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        .main_box:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+
+        .item_list {
+            border-radius: 2px;
+            border: 1px solid black;
+            box-shadow: 2px 2px 5px 0 black;
+            display: table;
+            float: left;
+        }
+
+        .bucket_list {
+            width: 350px;
+            margin-left: 10px;
+            border-radius: 2px;
+            float: left;
+        }
+
+        .item_list_table_table {
+            margin-top: 2px;
+            margin-left: 2px;
+            border-radius: 2px;
+            border: 1px solid black;
+            border-collapse: collapse;
+            float: left;
+        }
+
+        .item {
+            width: 250px;
+        }
+
+        th {
+            border: 1px solid black;
+            background: rgba(0, 0, 0, 0.81);
+            color: white;
+            height: 30px;
+        }
+
+        td {
+            border: 1px solid black;
+            font-size: small;
+        }
+    </style>
+    <title>^__^ 미니 쇼핑몰</title>
+    <script src="node_modules/jquery/dist/jquery.js"></script>
+</head>
+<body onload="itemListUp()">
+<div id=main class="main_box">
+    <div class="item_list">
+        <table class="item_list_table_table">
+            <tbody class="item" >
+                <tr id="firstItemListValue">
+
+                </tr>
+            </tbody>
+            <tbody class="item" >
+                <tr id="secendItemListValue">
+
+                </tr>
+            </tbody>
+            <tbody class="item" >
+                <tr id="thirdItemListValue">
+
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="bucket_list">
+        <table>
+            <tr>
+                <th colspan="5">Hamasaki ayumi님 장바구니</th>
+            </tr>
+            <tr>
+                <td> 순번 </td>
+                <td> 제품명 </td>
+                <td> 단가 </td>
+                <td> 수량 </td>
+                <td> 가격 </td>
+            </tr>
+            <tbody id="basketTemp">
+
+            </tbody>
+            <tr>
+                <th colspan="3">합계</th>
+                <td id="allAmount">0</td>
+                <td id="AllPrice">0</td>
+            </tr>
+        </table>
+        <input type="button" value="주문하기" onclick="orderButton()">
+        <input type="button" value="주문 내역 확인" onclick="orderListView()">
+    </div>
+</div>
+
+<script language="JavaScript">
+    function itemListUp() {
+        var NumCheck = 0;
+        $.ajax({
+            type        : "POST",
+            url         : "itemListValue.php",
+            xhrFields   : {
+                withCredentials: true
+            },
+            crossDomain : true,
+            data        : {
+                num : NumCheck
+            }
+        }).done(function (result1) {
+            $("#firstItemListValue").append(result1);
+            var NumCheck = 3;
+            $.ajax({
+                type        : "POST",
+                url         : "itemListValue.php",
+                xhrFields   : {
+                    withCredentials: true
+                },
+                crossDomain : true,
+                data        : {
+                    num : NumCheck
+                }
+            }).done(function (result2) {
+                $("#secendItemListValue").append(result2);
+                var NumCheck = 6;
+                $.ajax({
+                    type        : "POST",
+                    url         : "itemListValue.php",
+                    xhrFields   : {
+                        withCredentials: true
+                    },
+                    crossDomain : true,
+                    data        : {
+                        num : NumCheck
+                    }
+                }).done(function (result3) {
+                    $("#thirdItemListValue").append(result3);
+                });
+            });
+        });
+    }
+    function addBucket(idValue) {
+        $.ajax({
+            type        : "POST",
+            url         : "addBucket.php",
+            xhrFields   : {
+                withCredentials: true
+            },
+            crossDomain : true,
+            data        : {
+                idValue : idValue
+            }
+        }).done(function (result4) {
+            $("#basketTemp").html(result4);
+            $.ajax({
+                type        : "POST",
+                url         : "resultNumPri.php",
+                xhrFields   : {
+                    withCredentials: true
+                },
+                crossDomain : true
+            }).done(function (result5) {
+                var resultValue = result5.split("/");
+                $("#allAmount").html(resultValue[1]);
+                $("#AllPrice").html(resultValue[0]);
+            });
+        });
+    }
+
+    function orderButton() {
+        $.ajax({
+            type        : "POST",
+            url         : "makeOrder.php",
+            xhrFields   : {
+                withCredentials: true
+            },
+            crossDomain : true
+        }).done(function () {
+            $("#basketTemp").empty();
+            $("#allAmount").empty();
+            $("#AllPrice").empty();
+        });
+    }
+
+    function orderListView() {
+        location.href = "orderListView.html";
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../node_modules/jquery/dist/jquery.js"></script>
+</head>
+<body>
+    ID          : <input type="text" id="Id" name="Id">
+    PASSWORD    : <input type="text" id="Pass" name="Pass">
+    <input type="button" onclick="login()" value="로그인">
+    <br>
+    <h4 hidden id="IdOrPassNull">아이디와 비밀번호를 입력하지 않았습니다.</h4>
+    <h4 hidden id="IdOrPassFail">아이디와 비밀번호가 일치하지 않습니다.</h4>
+
+    <script language="JavaScript">
+        function login() {
+            var idChecked       = $("#Id").val();
+            var passChecked     = $("#Pass").val();
+
+            if(idChecked == "" || passChecked == "") {
+                $("#IdOrPassNull").show();
+            }
+            else {
+                $("#IdOrPassNull").hide();
+                $.ajax({
+                    type        : "POST",
+                    url         : "loginProcess.php",
+                    data        : {
+                        idValue: idChecked,
+                        passValue: passChecked
+                    }
+                }).done(function (result) {
+                    if(result == "Y") {
+                        location.href = "../itemListUpView.html";
+                    }
+                    else if(result == "N") {
+                        $("#IdOrPassFail").show();
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>
