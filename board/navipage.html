@@ -211,7 +211,9 @@
         $.ajax({
             type: "POST",
             url: "login/loginCheck.php",
-            data: {sessionCheck: value}
+            data: {
+                sessionCheck: value
+            }
         }).done(function (data) {
             if(data == "OK") {
                 $("#loginValue").hide();
